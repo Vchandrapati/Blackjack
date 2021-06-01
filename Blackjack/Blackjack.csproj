@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Chip.png" />
+    <None Remove="Circle pfp.png" />
+    <None Remove="Fonts\CorporationGames.ttf" />
+    <None Remove="Fonts\Final Gambit.otf" />
+    <None Remove="Help.png" />
+    <None Remove="Leader-Trophy.png" />
+    <None Remove="leaderboard.png" />
+    <None Remove="Level.png" />
+    <None Remove="Logo.png" />
+    <None Remove="Play.png" />
+    <None Remove="Settings.png" />
+    <None Remove="Shop.png" />
+    <None Remove="Statistics.png" />
+    <None Remove="Trophy.jpg" />
+    <None Remove="Trophy.png" />
+    <None Remove="Wins.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Fonts\CorporationGames.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Fonts\Final Gambit.otf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySql.Data" Version="8.0.25" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Chip.png" />
+    <Resource Include="Assets\Circle pfp.png" />
+    <Resource Include="Assets\Leader-Trophy.png" />
+    <Resource Include="Assets\leaderboard.png" />
+    <Resource Include="Assets\Level.png" />
+    <Resource Include="Assets\Logo.png" />
+    <Resource Include="Assets\Play.png" />
+    <Resource Include="Assets\Settings.png" />
+    <Resource Include="Assets\Shop.png" />
+    <Resource Include="Assets\Statistics.png" />
+    <Resource Include="Assets\Trophy.jpg" />
+    <Resource Include="Assets\Trophy.png" />
+    <Resource Include="Assets\Wins.png" />
+    <Resource Include="Assets\Help.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="CreateAcc.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Leaderboards.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

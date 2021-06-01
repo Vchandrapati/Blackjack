@@ -1,0 +1,116 @@
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.exe
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.deps.json
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.json
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.dev.json
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.pdb
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csprojAssemblyReference.cache
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\App.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.cache
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.lref
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.g.resources
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfoInputs.cache
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfo.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.CoreCompileInputs.cache
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.dll
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.pdb
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.genruntimeconfig.cache
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.Properties.Resources.resources
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.GenerateResource.cache
+U:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.exe
+U:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.deps.json
+U:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.json
+U:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.dev.json
+U:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.dll
+U:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.pdb
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csprojAssemblyReference.cache
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.g.cs
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.g.cs
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\App.g.cs
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.cache
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.lref
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.baml
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.baml
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.baml
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.g.resources
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.Properties.Resources.resources
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.GenerateResource.cache
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfoInputs.cache
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfo.cs
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.CoreCompileInputs.cache
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.dll
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.pdb
+U:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.genruntimeconfig.cache
+E:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.exe
+E:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.deps.json
+E:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.json
+E:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.dev.json
+E:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.dll
+E:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.pdb
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csprojAssemblyReference.cache
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.g.cs
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.g.cs
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\App.g.cs
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.cache
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.lref
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.baml
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.baml
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.baml
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.g.resources
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.Properties.Resources.resources
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.GenerateResource.cache
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfoInputs.cache
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfo.cs
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.CoreCompileInputs.cache
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.dll
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.pdb
+E:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.genruntimeconfig.cache
+D:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.exe
+D:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.deps.json
+D:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.json
+D:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.dev.json
+D:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.dll
+D:\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.pdb
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csprojAssemblyReference.cache
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.g.cs
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.g.cs
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\App.g.cs
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.cache
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_MarkupCompile.lref
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Game_Board.baml
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.baml
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.g.resources
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.Properties.Resources.resources
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.GenerateResource.cache
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfoInputs.cache
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.AssemblyInfo.cs
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.CoreCompileInputs.cache
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.dll
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.pdb
+D:\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.genruntimeconfig.cache
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Google.Protobuf.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\K4os.Compression.LZ4.Streams.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\K4os.Hash.xxHash.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\MySql.Data.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Ubiety.Dns.Core.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Zstandard.Net.dll
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.CopyComplete
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\CreateAcc.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\CreateAcc.baml
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Fonts\CorporationGames.ttf
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Fonts\Final Gambit.otf
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_Content.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Leaderboards.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Leaderboards.baml
