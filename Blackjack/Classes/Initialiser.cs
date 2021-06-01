@@ -79,7 +79,7 @@ namespace Blackjack.Classes
 
             var decktmp = Shoe.ToArray();
             Shoe.Clear();
-            decktmp.IShuffle();
+            decktmp.Shuffle();
             
             foreach (var card in decktmp)
                 Shoe.Push(card);

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Blackjack.Classes
 {
-    public static class Shuffle
+    public static class Methods
     {
-        public static void IShuffle<T>(this IList<T> list)
+        public static void Shuffle<T>(this IList<T> list)
         {
             Random Idx = new Random();
 
