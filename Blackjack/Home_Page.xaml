@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blackjack"
         mc:Ignorable="d"
-        Title="Home_Page" Height="430" Width="800" Background="{x:Null}" WindowStyle="None" ResizeMode="NoResize" Foreground="{x:Null}" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+        Title="Home_Page" Height="450" Width="600" Background="{x:Null}" WindowStyle="None" ResizeMode="NoResize" Foreground="{x:Null}" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -146,14 +146,24 @@
                                     </LinearGradientBrush>
                                 </Rectangle.Fill>
                             </Rectangle>
-                            <Image HorizontalAlignment="Left" Height="136" Margin="210,57,0,0" VerticalAlignment="Top" Width="211" Source="/Assets/leaderboard.png"/>
+                            <Image HorizontalAlignment="Left" Height="136" Margin="220,36,0,0" VerticalAlignment="Top" Width="211" Source="/Assets/leaderboard.png"/>
                             <TextBlock HorizontalAlignment="Left" Height="52" Text="Leaderboards" TextWrapping="Wrap" VerticalAlignment="Top" Width="220" FontFamily="Bungee Inline" FontSize="24" Margin="10,10,0,0"/>
-                            <Image HorizontalAlignment="Left" Height="68" Margin="31,93,0,0" VerticalAlignment="Top" Width="70" Stretch="Fill" Source="/Assets/Leader-Trophy.png" RenderTransformOrigin="0.5,0.5">
+                            <Image HorizontalAlignment="Left" Height="68" Margin="31,73,0,0" VerticalAlignment="Top" Width="70" Stretch="Fill" Source="/Assets/Leader-Trophy.png" RenderTransformOrigin="0.5,0.5">
                                 <Image.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>
                                         <SkewTransform/>
                                         <RotateTransform Angle="32.808"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Image.RenderTransform>
+                            </Image>
+                            <Image Margin="138,75,146,25" Stretch="Fill" Source="pack://siteoforigin:,,,/Wins.png" RenderTransformOrigin="0.5,0.5">
+                                <Image.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-37.978"/>
                                         <TranslateTransform/>
                                     </TransformGroup>
                                 </Image.RenderTransform>
@@ -209,8 +219,8 @@
                                     </LinearGradientBrush>
                                 </Rectangle.Fill>
                             </Rectangle>
-                            <TextBlock HorizontalAlignment="Center" Height="41" Margin="0,10,0,0" Text="Statistics" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="24" FontFamily="Bungee Inline"/>
-                            <Image HorizontalAlignment="Left" Height="90" Margin="-1,90,0,0" VerticalAlignment="Top" Width="92" Source="/Assets/Statistics.png" Stretch="Fill"/>
+                            <TextBlock HorizontalAlignment="Left" Height="41" Margin="6,14,0,0" Text="Statistics" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="22" FontFamily="Bungee Inline"/>
+                            <Image HorizontalAlignment="Left" Height="90" Margin="0,70,0,0" VerticalAlignment="Top" Width="92" Source="/Assets/Statistics.png" Stretch="Fill"/>
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true"/>
@@ -388,32 +398,29 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="ImageStyle1" TargetType="{x:Type Image}"/>
     </Window.Resources>
     <Border Background="#232537" CornerRadius="30,30,30,30">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup"/>
         </VisualStateManager.VisualStateGroups>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="53*"/>
-                <ColumnDefinition Width="11*"/>
-                <ColumnDefinition Width="52*"/>
-                <ColumnDefinition Width="19*"/>
-                <ColumnDefinition Width="665*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="BtnBoards" Style="{DynamicResource btnLeaderboard}" Content="Button" HorizontalAlignment="Left" Height="180" Margin="125,40,0,0" VerticalAlignment="Top" Width="335" Grid.Column="4" Click="BtnBoards_OnClick"/>
-            <TextBlock x:Name="txtuser" HorizontalAlignment="Left" Height="51" Margin="26,9,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontFamily="Bungee Inline" Foreground="Black" FontSize="24" Grid.Column="2" Grid.ColumnSpan="3"/>
-            <Image Margin="10,10,46,0" Stretch="Fill" Source="/Assets/Circle pfp.png" Width="60" Height="60" VerticalAlignment="Top" Grid.ColumnSpan="3" RenderTransformOrigin="0.513,1.433"/>
-            <Image Height="106" VerticalAlignment="Top" Source="/Assets/Trophy.png" Margin="-12,199,20,0" Grid.ColumnSpan="3" Stretch="Fill"/>
-            <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Height="51" Margin="26,112,0,0" Text="Level" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontFamily="Bungee Inline" Foreground="Black" FontSize="24" Grid.Column="2" Grid.ColumnSpan="3"/>
-            <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Height="51" Margin="26,212,0,0" Text="Points" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontFamily="Bungee Inline" Foreground="Black" FontSize="24" Grid.Column="2" Grid.ColumnSpan="3"/>
-            <Image Margin="-3,96,29,264" Stretch="Fill" Source="/Assets/Level.png" Width="90" Height="90" Grid.ColumnSpan="3"/>
-            <Image Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="85" Margin="-18,310,0,0" VerticalAlignment="Top" Width="122" Source="Assets/Chip.png" Stretch="Fill"/>
-            <TextBlock x:Name="txtMoney" HorizontalAlignment="Right" Height="51" Margin="0,322,503,0" Text="Money" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontFamily="Bungee Inline" Foreground="Black" FontSize="24" Grid.Column="2" Grid.ColumnSpan="3"/>
-            <Button Style="{DynamicResource btnStatistics}" x:Name="btnStatistics" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Height="180" Margin="467,40,0,0" VerticalAlignment="Top" Width="180"/>
-            <Button x:Name="btnStart" Style="{DynamicResource btnStart}" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Height="160" Margin="482,243,0,0" VerticalAlignment="Top" Width="165" Click="BtnStart_OnClick"/>
-            <Button Style="{DynamicResource btnSetting}" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Height="160" Margin="125,243,0,0" VerticalAlignment="Top" Width="165"/>
-            <Button Style="{DynamicResource btnShop}" Content="Button" Grid.Column="4" HorizontalAlignment="Left" Height="160" Margin="304,243,0,0" VerticalAlignment="Top" Width="165"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="81*"/>
+                <RowDefinition Height="349*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnBoards" Style="{DynamicResource btnLeaderboard}" HorizontalAlignment="Left" Height="160" Margin="40,2,0,0" VerticalAlignment="Top" Width="345" Click="BtnBoards_OnClick" Grid.Row="1" MouseEnter="UIElement_OnMouseEnter" MouseLeave="BtnStatistics_OnMouseLeave"/>
+            <TextBlock x:Name="txtuser" HorizontalAlignment="Left" Height="51" Margin="72,12,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" FontFamily="Bungee Inline" Foreground="White" FontSize="22"/>
+            <Image Margin="3,8,532,0" Stretch="Fill" Source="/Assets/Circle pfp.png" Height="65" VerticalAlignment="Top" RenderTransformOrigin="0.513,1.433" Width="65"/>
+            <Image Height="50" VerticalAlignment="Center" Source="/Assets/Trophy.png" Margin="221,0,329,0" Stretch="Fill" Width="50" RenderTransformOrigin="0.972,0.928"/>
+            <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Height="51" Margin="271,12,0,0" Text="Points" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" FontFamily="Bungee Inline" Foreground="White" FontSize="22"/>
+            <Image HorizontalAlignment="Left" Height="50" Margin="385,0,0,0" VerticalAlignment="Center" Width="65" Source="Assets/Chip.png" Stretch="Fill"/>
+            <TextBlock x:Name="txtMoney" HorizontalAlignment="Right" Height="51" Margin="0,10,-62,0" Text="Money" TextWrapping="Wrap" VerticalAlignment="Top" Width="208" FontFamily="Bungee Inline" Foreground="White" FontSize="24"/>
+            <Button Style="{DynamicResource btnStatistics}" x:Name="btnStatistics" Content="Button" HorizontalAlignment="Left" Height="160" Margin="398,2,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" MouseEnter="UIElement_OnMouseEnter" MouseLeave="BtnStatistics_OnMouseLeave"/>
+            <Button x:Name="btnStart" Style="{DynamicResource btnStart}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="398,174,0,0" VerticalAlignment="Top" Width="165" Click="BtnStart_OnClick" Grid.Row="1" MouseEnter="UIElement_OnMouseEnter" MouseLeave="BtnStatistics_OnMouseLeave"/>
+            <Button x:Name="btnHelp" Style="{DynamicResource btnSetting}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="40,174,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" MouseEnter="UIElement_OnMouseEnter" MouseLeave="BtnStatistics_OnMouseLeave"/>
+            <Button x:Name="btnShop" Style="{DynamicResource btnShop}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="219,174,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" MouseEnter="UIElement_OnMouseEnter" MouseLeave="BtnStatistics_OnMouseLeave"/>
+            <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="4,47,0,0" Text="Level" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" FontFamily="Bungee Inline" Panel.ZIndex="10" Foreground="Black" TextAlignment="Center" FontSize="16" Grid.RowSpan="2"/>
         </Grid>
     </Border>
 </Window>

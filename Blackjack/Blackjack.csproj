@@ -22,7 +22,6 @@
     <None Remove="Statistics.png" />
     <None Remove="Trophy.jpg" />
     <None Remove="Trophy.png" />
-    <None Remove="Wins.png" />
   </ItemGroup>
 
   <ItemGroup>
