@@ -12,9 +12,9 @@ namespace Blackjack.Classes
         public static int DA { get; set; }
         public static int PlayerCardCount { get; set; }
         public static int DealerCardCount { get; set; }
-        public static int PH_Value { get; set; }
-        public static int DH_Value { get; set; }
+        public static int PlayerHandValue { get; set; }
+        public static int DealerHandValue { get; set; }
         public static Stack<Tuple<string, int>> Shoe { get; set; }
-        public static bool stand { get; set; }
+        public static bool Stand { get; set; }
     }
 }
