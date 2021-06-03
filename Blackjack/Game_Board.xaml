@@ -28,7 +28,7 @@
             <Image x:Name="Dealer_Card_4" HorizontalAlignment="Left" Margin="800,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
             <StackPanel x:Name="Results"/>
             <TextBlock HorizontalAlignment="Left" Height="80" Margin="200,358,0,0" Text="BLACKJACK ★ PAYS ★ 3 TO 2" TextWrapping="Wrap" VerticalAlignment="Top" Width="951" FontSize="62" Foreground="#FFFFEE00" FontFamily="Cambria Math" TextAlignment="Center"/>
-            <TextBlock HorizontalAlignment="Left" Height="29" Margin="400,319,0,0" Text="Dealer must draw on 16 and stand on 17" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" Foreground="Red" Cursor="" FontSize="30" TextAlignment="Center" FontFamily="Cambria Math"/>
+            <TextBlock HorizontalAlignment="Left" Height="29" Margin="400,319,0,0" Text="DealerEvaluate must draw on 16 and stand on 17" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" Foreground="Red" Cursor="" FontSize="30" TextAlignment="Center" FontFamily="Cambria Math"/>
         </Grid>
     </Border>
 </Window>

@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Net.Mime;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
+using static Blackjack.Classes.Evaluator;
+using static Blackjack.Classes.Variables;
+using static Blackjack.Classes.
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Blackjack.Classes;
@@ -12,19 +11,12 @@ using Blackjack.Classes;
 namespace Blackjack
 {
     public partial class Game_Board
-    {
-        private readonly ImageSource _cardBack =
+    { 
+        readonly ImageSource _cardBack =
             new BitmapImage(new Uri(@$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//black_back.bmp",
                 UriKind.RelativeOrAbsolute));
 
         private readonly Initialiser _init = new Initialiser();
-        public ImageSource DealerFlipped;
-        public ImageSource DrawnCard;
-        public int PA, DA;
-        public int PH_Counter, DH_Counter;
-        public int PH_Value, DH_Value;
-        public Stack<Tuple<string, int>> Shoe;
-        public bool stand;
 
         TextBlock txtResults = new TextBlock();
 
@@ -41,7 +33,7 @@ namespace Blackjack
             var suit = Shoe.Peek().Item1;
             var value = Shoe.Peek().Item2;
 
-            if (PH_Counter == 4)
+            if (PlayerCardCount == 4)
             {
                 stand = true;
                 Stand();
@@ -54,7 +46,7 @@ namespace Blackjack
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                     UriKind.RelativeOrAbsolute));
-                PH_Counter++;
+                PlayerCardCount++;
                 PH_Value += 11;
             }
             else if (suit.Length == 2)
@@ -62,7 +54,7 @@ namespace Blackjack
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                     UriKind.RelativeOrAbsolute));
-                PH_Counter++;
+                PlayerCardCount++;
                 PH_Value += 10;
             }
             else
@@ -70,11 +62,11 @@ namespace Blackjack
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item2}{Shoe.Peek().Item1}.bmp",
                     UriKind.RelativeOrAbsolute));
-                PH_Counter++;
+                PlayerCardCount++;
                 PH_Value += value;
             }
 
-            switch (PH_Counter)
+            switch (PlayerCardCount)
             {
                 case 3:
                     Player_Card_3.Source = DrawnCard;
@@ -87,7 +79,7 @@ namespace Blackjack
                     break;
             }
 
-            Player_Evaluate();
+            PlayerEvaluate();
 
             Shoe.Pop();
         }
@@ -104,9 +96,9 @@ namespace Blackjack
 
             while (DH_Value < 17 && stand)
             {
-                if (DH_Counter == 4)
+                if (DealerCardCount == 4)
                 {
-                    Dealer_Evaluate();
+                    DealerEvaluate();
                     Start();
                     return;
                 }
@@ -119,7 +111,7 @@ namespace Blackjack
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    DH_Counter++;
+                    DealerCardCount++;
                     DH_Value += 11;
                 }
                 else if (suit.Length == 2)
@@ -127,7 +119,7 @@ namespace Blackjack
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    DH_Counter++;
+                    DealerCardCount++;
                     DH_Value += 10;
                 }
                 else
@@ -135,11 +127,11 @@ namespace Blackjack
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item2}{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    DH_Counter++;
+                    DealerCardCount++;
                     DH_Value += value;
                 }
 
-                switch (DH_Counter)
+                switch (DealerCardCount)
                 {
                     case 3:
                         Dealer_Card_3.Source = DrawnCard;
@@ -153,78 +145,16 @@ namespace Blackjack
                 }
             }
 
-            Dealer_Evaluate();
-        }
-
-        public void Dealer_Evaluate()
-        {
-            if (DH_Value > 21 && DA > 0)
-            {
-                while (DH_Value > 21)
-                {
-                    if (DA != 0) DH_Value -= 10;
-                }
-            }
-            else if (DH_Value > 21 && DA == 0 || DH_Value > 17 && DH_Value > 21)
-                Instantiate_Results(Color.FromRgb(255, 0, 0), "Dealer Bust");     
-            else if (DH_Value > 17 && DH_Value <= 21 && DH_Value > PH_Value || DH_Value > 17 && DH_Value == 21 ||
-                     DH_Value == 17 && DH_Value > PH_Value || DH_Value > 17 && DH_Value > PH_Value)
-                Instantiate_Results(Color.FromRgb(255, 0, 0), "Dealer Wins");
-            
-            else if (DH_Value == 17 && DH_Value < PH_Value || DH_Value > 17 && DH_Value < PH_Value)
-                Instantiate_Results(Color.FromRgb(0, 255, 0), "Player Wins!");
-            
-            else if (DH_Value == PH_Value)
-                Instantiate_Results(Color.FromRgb(255,255, 255), "Push");
-            
+            DealerEvaluate();
         }
 
         private void btnRestart_Click(object sender, RoutedEventArgs e)
         {
-            Instantiate_Results(Color.FromRgb(255, 0, 0), "");
             Start();
-        }
-
-        public void Player_Evaluate()
-        {
-            if (PH_Value > 21 && PA > 0)
-            {
-                while (PH_Value > 21)
-                    if (PA != 0)
-                        PH_Value -= 10;
-            }
-            else if (PH_Value > 21 && PA == 0)         
-                Instantiate_Results(Color.FromRgb(255, 0, 0), "Player Bust");           
-            else if (PH_Value == 21)
-                Instantiate_Results(Color.FromRgb(0, 255, 0), "Player Wins!");
-            else if (PH_Counter == 4 && PH_Value < 21)
-                Stand();
-        }
-
-        public void Instantiate_Results(Color color, string result)
-        {
-            Dealer_Card_1.Source = DealerFlipped;
-            btnRestart.Visibility = Visibility.Visible;
-            btnHit.Click -= BtnHit_OnClick;
-            btnStand.Click -= BtnStand_OnClick;
-
-            txtResults.Height = 50;
-            txtResults.Width = 200;
-            txtResults.Margin = new Thickness(45, 400, 0, 0);
-            txtResults.Text = result;
-            txtResults.FontWeight = FontWeight.FromOpenTypeWeight(500);
-            txtResults.FontSize = 36;
-            txtResults.Background = new SolidColorBrush(Colors.Transparent);
-            txtResults.Foreground = new SolidColorBrush(color);
-
-            Results.Children.Remove(txtResults);
-            Results.Children.Add(txtResults);
         }
 
         public void Start()
         {
-            btnHit.Click += BtnHit_OnClick;
-            btnStand.Click += BtnStand_OnClick;
             btnRestart.Visibility = Visibility.Hidden;
             stand = false;
             Shoe = _init.Initalise(); 
@@ -232,15 +162,15 @@ namespace Blackjack
             Player_Card_4.Source = null;
             Dealer_Card_3.Source = null;
             Dealer_Card_4.Source = null;
-            PH_Counter = 0;
-            DH_Counter = 0;
+            PlayerCardCount = 0;
+            DealerCardCount = 0;
             PH_Value = 0;
             DH_Value = 0;
             PA = 0;
             DA = 0;
 
 
-            #region Player Draw
+            #region PlayerEvaluate Draw
 
             for (var i = 0; i < 2; i++)
             {
@@ -252,7 +182,7 @@ namespace Blackjack
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    PH_Counter++;
+                    PlayerCardCount++;
                     PH_Value += 11;
                 }
                 else if (suit.Length == 2)
@@ -260,17 +190,17 @@ namespace Blackjack
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    PH_Counter++;
+                    PlayerCardCount++;
                 }
                 else
                 {
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item2}{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    PH_Counter++;
+                    PlayerCardCount++;
                 }
 
-                switch (PH_Counter)
+                switch (PlayerCardCount)
                 {
                     case 1:
                         Player_Card_1.Source = DrawnCard;
@@ -290,7 +220,7 @@ namespace Blackjack
 
             #endregion
 
-            #region Dealer Draw
+            #region DealerEvaluate Draw
 
             for (var i = 0; i < 2; i++)
             {
@@ -302,7 +232,7 @@ namespace Blackjack
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    PH_Counter++;
+                    PlayerCardCount++;
                     PH_Value += 11;
                 }
 
@@ -311,17 +241,17 @@ namespace Blackjack
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    DH_Counter++;
+                    DealerCardCount++;
                 }
                 else
                 {
                     DrawnCard = new BitmapImage(new Uri(
                         @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{Shoe.Peek().Item2}{Shoe.Peek().Item1}.bmp",
                         UriKind.RelativeOrAbsolute));
-                    DH_Counter++;
+                    DealerCardCount++;
                 }
 
-                switch (DH_Counter)
+                switch (DealerCardCount)
                 {
                     case 1:
                         Dealer_Card_1.Source = _cardBack;
