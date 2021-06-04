@@ -41,9 +41,10 @@ namespace Blackjack
                     Player_Card_4.Source = DrawnCard;
                     break;
                 default:
-                    MessageBox.Show("error in draw");
+                    MessageBox.Show("Maximum hand size reached");
                     break;
             }
+            
             PlayerEvaluate();
         }
 
@@ -73,7 +74,7 @@ namespace Blackjack
                         Dealer_Card_4.Source = DrawnCard;
                         break;
                     default:
-                        MessageBox.Show("error in draw");
+                        MessageBox.Show("Maximum hand size reached");
                         break;
                 }
 
@@ -118,7 +119,7 @@ namespace Blackjack
                         Player_Card_4.Source = DrawnCard;
                         break;
                     default:
-                        MessageBox.Show("error in draw");
+                        MessageBox.Show("Maximum hand size reached");
                         break;
                 }
 
@@ -138,10 +139,12 @@ namespace Blackjack
                         Dealer_Card_4.Source = DrawnCard;
                         break;
                     default:
-                        MessageBox.Show("error in draw");
+                        MessageBox.Show("Maximum hand size reached");
                         break;
                 }
             }
+            DealerEvaluate();
+            PlayerEvaluate();
         }
     }
 }

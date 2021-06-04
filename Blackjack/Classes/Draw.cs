@@ -16,6 +16,7 @@ namespace Blackjack.Classes
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
+                PA++;
                 PlayerCardCount++;
                 PlayerHandValue += 11;
             }
@@ -25,6 +26,7 @@ namespace Blackjack.Classes
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
                 PlayerCardCount++;
+                PlayerHandValue += 10;
             }
             else
             {
@@ -32,6 +34,7 @@ namespace Blackjack.Classes
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{value}{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
                 PlayerCardCount++;
+                PlayerHandValue += value;
             }
 
             Shoe.Pop();
@@ -48,16 +51,17 @@ namespace Blackjack.Classes
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
-                PlayerCardCount++;
-                PlayerHandValue += 11;
+                DA++;
+                DealerCardCount++;
+                DealerHandValue += 11;
             }
-
-            if (suit.Length == 2)
+            else if (suit.Length == 2)
             {
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
                 DealerCardCount++;
+                DealerHandValue += 10;
             }
             else
             {
@@ -65,6 +69,7 @@ namespace Blackjack.Classes
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{value}{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
                 DealerCardCount++;
+                DealerHandValue += value;
             }
 
             Shoe.Pop();

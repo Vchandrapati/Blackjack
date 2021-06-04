@@ -158,7 +158,7 @@
                                     </TransformGroup>
                                 </Image.RenderTransform>
                             </Image>
-                            <Image Margin="138,75,146,25" Stretch="Fill" Source="pack://siteoforigin:,,,/Wins.png" RenderTransformOrigin="0.5,0.5">
+                            <Image Margin="138,75,146,25" Stretch="Fill" Source="Assets/Wins.png" RenderTransformOrigin="0.5,0.5">
                                 <Image.RenderTransform>
                                     <TransformGroup>
                                         <ScaleTransform/>

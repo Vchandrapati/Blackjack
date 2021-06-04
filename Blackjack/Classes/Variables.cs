@@ -16,5 +16,7 @@ namespace Blackjack.Classes
         public static int DealerHandValue { get; set; }
         public static Stack<Tuple<string, int>> Shoe { get; set; }
         public static bool Stand { get; set; }
+        public static List<dynamic> PlayerHand { get; set; }
+        public static List<dynamic> DealerHand { get; set; }
     }
 }
