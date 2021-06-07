@@ -29,36 +29,39 @@ namespace Blackjack
             using (MySqlConnection conn = new MySqlConnection(connectionstring))
             {
                 conn.Open();
-                string query = "SELECT Username, Level, Points, Money FROM user_data";
+                string query = "SELECT Username, Points, Level, Money FROM user_data ORDER BY Points DESC";
                 using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
                     da.Fill(lb);
             }
 
-            foreach (DataGridColumn column in dgLeaders.Columns)
-                column.Width = 500;
-
             dgLeaders.ItemsSource = lb.DefaultView;
-        }
-
-        private void BtnLogin_OnClick(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void BtnCreate_OnClick(object sender, RoutedEventArgs e)
         {
-            CreateAcc ca = new CreateAcc();
-            ca.Show();
-            this.Close();
+            DataTable lb = new DataTable();
+            using (MySqlConnection conn = new MySqlConnection(connectionstring))
+            {
+                conn.Open();
+                string query = "SELECT Username, Points, Level, Money FROM user_data ORDER BY Points DESC";
+                using (MySqlDataAdapter da = new MySqlDataAdapter(query, conn))
+                    da.Fill(lb);
+            }
+
+            dgLeaders.ItemsSource = lb.DefaultView;
+
+            dgLeaders.Columns[0].Width = 120;
+            dgLeaders.Columns[1].Width = 100;
+            dgLeaders.Columns[2].Width = 200;
+            dgLeaders.Columns[3].Width = 200;
         }
 
-        private void BtnBrooker_OnClick(object sender, RoutedEventArgs e)
+        private void dgLeaders_Loaded(object sender, RoutedEventArgs e)
         {
-            user = "Guest";
-            guest = true;
-            Home_Page hp = new Home_Page();
-            hp.Show();
-            this.Close();
+            dgLeaders.Columns[0].Width = 120;
+            dgLeaders.Columns[1].Width = 100;
+            dgLeaders.Columns[2].Width = 200;
+            dgLeaders.Columns[3].Width = 200;
         }
     }
 }

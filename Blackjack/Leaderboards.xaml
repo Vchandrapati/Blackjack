@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blackjack"
         mc:Ignorable="d"
-        Title="Login_Page" Height="497" Width="357" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" Foreground="{x:Null}" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+        Title="Login_Page" Height="500" Width="700" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" Foreground="{x:Null}" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -170,12 +170,48 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual4">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background4" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border4" Color="#FF707070"/>
+        <Style x:Key="btnRefresh" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual4}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background4}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border4}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid Width="100">
+                            <Rectangle Margin="-8,0,0,0" StrokeThickness="2" Stroke="White"/>
+                            <TextBlock FontSize="16" Height="19" Margin="-4,8,4,8" Text="Refresh" TextWrapping="Wrap" Width="100" TextAlignment="Center"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Border Background="#232537" CornerRadius="25,25,25,25">
         <Grid>
-            <Button x:Name="btnCreate" Style="{DynamicResource btnCreate}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="35,394,0,0" VerticalAlignment="Top" Width="103" Foreground="White" Click="BtnCreate_OnClick" TabIndex="4"/>
-            <Button x:Name="btnBrooker" Style="{DynamicResource btnBrooker}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="222,394,0,0" VerticalAlignment="Top" Width="103" Foreground="White" TabIndex="4" Click="BtnBrooker_OnClick"/>
-            <DataGrid x:Name="dgLeaders" Margin="32,46,36,158"/>
+            <Button x:Name="btnRefresh" Style="{DynamicResource btnRefresh}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="222,378,0,0" VerticalAlignment="Top" Width="103" Foreground="White" Click="BtnCreate_OnClick" TabIndex="4"/>
+            <DataGrid x:Name="dgLeaders" Margin="25,37,25,183" Loaded="dgLeaders_Loaded" FontSize="16" FontFamily="Bungee Inline" Height="280" IsReadOnly="True" Width="650"/>
         </Grid>
     </Border>
 </Window>
