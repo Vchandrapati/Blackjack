@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Blackjack"
         mc:Ignorable="d"
-        Title="Login_Page" Height="500" Width="700" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" Foreground="{x:Null}" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+        Title="Login_Page" Height="403" Width="700" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" Foreground="{x:Null}" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -210,8 +210,8 @@
     </Window.Resources>
     <Border Background="#232537" CornerRadius="25,25,25,25">
         <Grid>
-            <Button x:Name="btnRefresh" Style="{DynamicResource btnRefresh}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="222,378,0,0" VerticalAlignment="Top" Width="103" Foreground="White" Click="BtnCreate_OnClick" TabIndex="4"/>
-            <DataGrid x:Name="dgLeaders" Margin="25,37,25,183" Loaded="dgLeaders_Loaded" FontSize="16" FontFamily="Bungee Inline" Height="280" IsReadOnly="True" Width="650"/>
+            <Button x:Name="btnRefresh" Style="{DynamicResource btnRefresh}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="572,337,0,0" VerticalAlignment="Top" Width="103" Foreground="White" Click="BtnCreate_OnClick" TabIndex="4"/>
+            <DataGrid x:Name="dgLeaders" Margin="25,29,25,94" Loaded="dgLeaders_Loaded" FontSize="16" FontFamily="Bungee Inline" Height="280" IsReadOnly="True" Width="650"/>
         </Grid>
     </Border>
 </Window>

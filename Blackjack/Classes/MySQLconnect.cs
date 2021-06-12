@@ -48,20 +48,6 @@ namespace Blackjack
             }
         }
 
-        public bool Close()
-        {
-            try
-            {
-                _connection.Close();
-                return true;
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        }
-
         public bool CreateUser(string user, string password)
         {
             var query = $"INSERT INTO user_data (Username, Password, Level, Points, Money) VALUES ('{user}', '{password}', 0, 0, 1000);";

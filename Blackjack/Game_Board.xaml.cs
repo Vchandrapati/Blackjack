@@ -99,8 +99,8 @@ namespace Blackjack
             DealerCardCount = 0;
             PlayerHandValue = 0;
             DealerHandValue = 0;
-            PA = 0;
-            DA = 0;
+            PlayerAceCount = 0;
+            DealerAceCount = 0;
 
             for (var i = 0; i < 2; i++)
             {

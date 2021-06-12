@@ -8,8 +8,8 @@ namespace Blackjack.Classes
     {
         public static ImageSource DealerFlipped { get; set; }
         public static ImageSource DrawnCard { get; set; }
-        public static int PA { get; set; }
-        public static int DA { get; set; }
+        public static int PlayerAceCount { get; set; }
+        public static int DealerAceCount { get; set; }
         public static int PlayerCardCount { get; set; }
         public static int DealerCardCount { get; set; }
         public static int PlayerHandValue { get; set; }

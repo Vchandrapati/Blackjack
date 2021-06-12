@@ -16,7 +16,7 @@ namespace Blackjack.Classes
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
-                PA++;
+                PlayerAceCount++;
                 PlayerCardCount++;
                 PlayerHandValue += 11;
             }
@@ -51,7 +51,7 @@ namespace Blackjack.Classes
                 DrawnCard = new BitmapImage(new Uri(
                     @$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//{suit}.bmp",
                     UriKind.RelativeOrAbsolute));
-                DA++;
+                DealerAceCount++;
                 DealerCardCount++;
                 DealerHandValue += 11;
             }
