@@ -37,7 +37,7 @@ namespace Blackjack
             dgLeaders.ItemsSource = lb.DefaultView;
         }
 
-        private void BtnCreate_OnClick(object sender, RoutedEventArgs e)
+        private void BtnRefresh_OnClick(object sender, RoutedEventArgs e)
         {
             DataTable lb = new DataTable();
             using (MySqlConnection conn = new MySqlConnection(connectionstring))
@@ -62,6 +62,13 @@ namespace Blackjack
             dgLeaders.Columns[1].Width = 100;
             dgLeaders.Columns[2].Width = 200;
             dgLeaders.Columns[3].Width = 200;
+        }
+
+        private void BtnBack_OnClick(object sender, RoutedEventArgs e)
+        {
+            Home_Page hp = new Home_Page();
+            hp.Show();
+            Close();
         }
     }
 }

@@ -29,8 +29,7 @@ namespace Blackjack
         {
             try
             {
-                _connection.OpenAsync();
-                return true;
+                _connection.Open();
             }
             catch (MySqlException ex)
             {
@@ -46,11 +45,13 @@ namespace Blackjack
                 }
                 return false;
             }
+
+            return true;
         }
 
         public bool CreateUser(string user, string password)
         {
-            var query = $"INSERT INTO user_data (Username, Password, Level, Points, Money) VALUES ('{user}', '{password}', 0, 0, 1000);";
+            var query = $"INSERT INTO user_data (Username, Password, Level, Points, Money, Wins, Losses, Games_Played, Money_Won, Money_Lost, Pushes, Cards_Drawn) VALUES ('{user}', '{password}', 0, 0, 1000, 1, 0, 1, 0, 0, 0, 0);";
             if (Connect())
             {
                 var cmd = new MySqlCommand(query, _connection);

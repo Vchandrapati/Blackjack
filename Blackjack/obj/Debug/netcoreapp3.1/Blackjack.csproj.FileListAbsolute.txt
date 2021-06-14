@@ -114,3 +114,5 @@ D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Fonts\Final Gambi
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack_Content.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Leaderboards.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Leaderboards.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Statistics.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Statistics.baml

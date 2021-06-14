@@ -4,14 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Blackjack.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Chip.png" />
-    <None Remove="Circle pfp.png" />
     <None Remove="Fonts\CorporationGames.ttf" />
     <None Remove="Fonts\Final Gambit.otf" />
-    <None Remove="Help.png" />
     <None Remove="Leader-Trophy.png" />
     <None Remove="leaderboard.png" />
     <None Remove="Level.png" />
@@ -70,6 +69,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Statistics.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="CreateAcc.xaml">
       <SubType>Designer</SubType>
     </Page>

@@ -1,13 +1,11 @@
 ﻿using System.Diagnostics.Eventing.Reader;
+using static Blackjack.Classes.Variables;
 using System.Windows;
 
 namespace Blackjack
 {
     public partial class MainWindow : Window
     {
-        public static bool connection;
-        public static bool guest;
-        public static string user = "";
         private readonly MySQLconnect _sqlconnect;
 
         public MainWindow()
@@ -16,15 +14,12 @@ namespace Blackjack
 
             _sqlconnect = new MySQLconnect();
 
-            if (_sqlconnect.Connect())
-                connection = true;
-            else
-                connection = false;
+            Connection = _sqlconnect.Connect();
         }
 
         private void BtnLogin_OnClick(object sender, RoutedEventArgs e)
         {
-            if (connection)
+            if (Connection)
             {
                 if (txtUser.Text == "" || txtPass.Password == "")
                     MessageBox.Show("Please enter a Username and/or Password");
@@ -47,25 +42,25 @@ namespace Blackjack
 
             }
             else
-                MessageBox.Show("Server connection unavailable");
+                MessageBox.Show("Server connection unavailable please continue as a guest");
         }
 
         private void BtnCreate_OnClick(object sender, RoutedEventArgs e)
         {
-            if (connection)
+            if (Connection)
             {
                 CreateAcc ca = new CreateAcc();
                 ca.Show();
                 Close();
             }
             else
-                MessageBox.Show("Server connection unavailable");
+                MessageBox.Show("Server connection unavailable please continue as a guest");
         }
 
         private void BtnBrooker_OnClick(object sender, RoutedEventArgs e)
         {
             user = "Guest";
-            guest = true;
+            Guest = true;
             Home_Page hp = new Home_Page();
             hp.Show();
             this.Close();

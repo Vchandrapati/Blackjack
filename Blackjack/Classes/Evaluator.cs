@@ -5,8 +5,9 @@ namespace Blackjack.Classes
 {
     public static class Evaluator
     {
-        private static Game_Board gb = new Game_Board();
-        public static void DealerEvaluate()
+        private static readonly Game_Board _gb = new Game_Board();
+
+        public static bool DealerEvaluate()
         {
             if (DealerHandValue > 21 && DealerAceCount > 0)
             {
@@ -21,16 +22,35 @@ namespace Blackjack.Classes
                 }
             }
             else if (DealerHandValue > 21 && DealerAceCount == 0 || DealerHandValue > 17 && DealerHandValue > 21)
+            {
                 MessageBox.Show("Dealer went bust");
-            else if (DealerHandValue > 17 && DealerHandValue <= 21 && DealerHandValue > PlayerHandValue || DealerHandValue > 17 && DealerHandValue == 21 || DealerHandValue == 17 && DealerHandValue > PlayerHandValue || DealerHandValue > 17 && DealerHandValue > PlayerHandValue)
+                return true;
+            }
+            else if (DealerHandValue > 17 && DealerHandValue <= 21 && DealerHandValue > PlayerHandValue ||
+                     DealerHandValue > 17 && DealerHandValue == 21 ||
+                     DealerHandValue == 17 && DealerHandValue > PlayerHandValue ||
+                     DealerHandValue > 17 && DealerHandValue > PlayerHandValue)
+            {
                 MessageBox.Show("Dealer won");
-            else if (DealerHandValue == 17 && DealerHandValue < PlayerHandValue || DealerHandValue > 17 && DealerHandValue < PlayerHandValue)
+                return true;
+            }
+            else if (DealerHandValue == 17 && DealerHandValue < PlayerHandValue ||
+                     DealerHandValue > 17 && DealerHandValue < PlayerHandValue)
+            {
+
                 MessageBox.Show("Dealer lost");
+                return true;
+            }
             else if (DealerHandValue == PlayerHandValue)
+            {
                 MessageBox.Show("Push");
+                return true;
+            }
+
+            return false;
         }
 
-        public static void PlayerEvaluate()
+        public static bool PlayerEvaluate()
         {
             if (PlayerHandValue > 21 && PlayerAceCount > 0)
             {
@@ -45,11 +65,19 @@ namespace Blackjack.Classes
                 }
             }
             else if (PlayerHandValue > 21 && PlayerAceCount == 0)
+            {
                 MessageBox.Show("Player went bust and lost $x");
+                return true;
+            }
             else if (PlayerHandValue == 21)
+            {
                 MessageBox.Show("Player won $x");
+                return true;
+            }
             else if (PlayerCardCount == 4 && PlayerHandValue < 21)
-                gb.DealerTurn();
+                _gb.DealerTurn();
+
+            return false;
         }
     }
 }

@@ -44,8 +44,12 @@ namespace Blackjack
                     MessageBox.Show("Maximum hand size reached");
                     break;
             }
-            
-            PlayerEvaluate();
+
+            if (PlayerEvaluate())
+            {
+                Dealer_Card_1.Source = DealerFlipped;
+                Start();
+            }
         }
 
         private void BtnStand_OnClick(object sender, RoutedEventArgs e)
@@ -78,7 +82,11 @@ namespace Blackjack
                         break;
                 }
 
-            DealerEvaluate();
+            if (DealerEvaluate())
+            {
+                Dealer_Card_1.Source = DealerFlipped;
+                Start();
+            }
         }
 
         private void btnRestart_Click(object sender, RoutedEventArgs e)
@@ -143,8 +151,18 @@ namespace Blackjack
                         break;
                 }
             }
-            DealerEvaluate();
-            PlayerEvaluate();
+
+            if (DealerEvaluate())
+            {
+                Dealer_Card_1.Source = DealerFlipped;
+                Start();
+            }
+
+            if (PlayerEvaluate())
+            {
+                Dealer_Card_1.Source = DealerFlipped;
+                Start();
+            }
         }
     }
 }

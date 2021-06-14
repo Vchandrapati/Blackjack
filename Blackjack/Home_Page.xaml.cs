@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using static Blackjack.MainWindow;
+using static Blackjack.Classes.Variables;
 
 namespace Blackjack
 {
@@ -14,9 +14,9 @@ namespace Blackjack
 
             _sqlconnect = new MySQLconnect();
 
-            _sqlconnect.Connect();
+            Connection = _sqlconnect.Connect();
 
-            if (guest)
+            if (Guest)
             {
                 txtLevel.Text = "2";
                 txtMoney.Text = "$3000";
@@ -39,14 +39,30 @@ namespace Blackjack
 
         private void BtnBoards_OnClick(object sender, RoutedEventArgs e)
         {
-            if (connection)
+            if (Connection)
             {
                 Leaderboards lb = new Leaderboards();
                 lb.Show();
                 Close();
             }
-            else
+            else if (!Connection)
                 MessageBox.Show("Server connection unavailable");
+            else if (Guest)
+                MessageBox.Show("You must be signed in to have this functionality");
+        }
+
+        private void btnStatistics_OnClick(object sender, RoutedEventArgs e)
+        {
+            if (Connection)
+            {
+                Statistics st = new Statistics();
+                st.Show();
+                Close();
+            }
+            else if (!Connection)
+                MessageBox.Show("Server connection unavailable");
+            else if (Guest)
+                MessageBox.Show("You must be signed in to have this functionality");
         }
     }
 }
