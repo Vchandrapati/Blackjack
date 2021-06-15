@@ -5,12 +5,10 @@ namespace Blackjack
 {
     public partial class Home_Page : Window
     {
-        private readonly MySQLconnect _sqlconnect;
-
         public Home_Page()
         {
             InitializeComponent();
-            txtuser.Text = user;
+            txtuser.Text = User;
 
             _sqlconnect = new MySQLconnect();
 
@@ -24,9 +22,17 @@ namespace Blackjack
             }
             else
             {
-                txtLevel.Text = $"{_sqlconnect.Info(user, "Level") / 1000}";
-                txtMoney.Text = $"${_sqlconnect.Info(user, "Money")}";
-                txtPoints.Text = $"{_sqlconnect.Info(user, "Points")}";
+                Losses = _sqlconnect.Info(User, "Losses");
+                Wins = _sqlconnect.Info(User, "Wins");
+                Games_Played = _sqlconnect.Info(User, "Games_Played");
+                Money_Won = _sqlconnect.Info(User, "Money_Won");
+                Money_Lost = _sqlconnect.Info(User, "Money_Lost");
+                Pushes = _sqlconnect.Info(User, "Pushes");
+                Cards_Drawn = _sqlconnect.Info(User, "Cards_Drawn");
+
+                txtLevel.Text = $"{_sqlconnect.Info(User, "Level") / 1000}";
+                txtMoney.Text = $"${_sqlconnect.Info(User, "Money")}";
+                txtPoints.Text = $"{_sqlconnect.Info(User, "Points")}";
             }
         }
 

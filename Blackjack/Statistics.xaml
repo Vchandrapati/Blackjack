@@ -202,7 +202,7 @@
             <TextBlock x:Name="txtPR" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Margin="533,428,0,0" Foreground="White" FontFamily="Bungee Inline" FontSize="18"/>
             <TextBlock x:Name="txtCDR" HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" VerticalAlignment="Top" Width="124" Margin="533,468,0,0" Foreground="White" FontFamily="Bungee Inline" FontSize="18"/>
             <Image Margin="253,39,267,359" Stretch="Fill" Source="/Assets/Circle pfp.png"/>
-            <Button x:Name="btnBack" Style="{DynamicResource btnBack}" Content="Button" HorizontalAlignment="Left" Height="41" Margin="32,519,0,0" VerticalAlignment="Top" Width="108" Click="BtnBack_OnClick"/>
+            <Button x:Name="btnBack" Style="{DynamicResource btnBack}" Content="Button" HorizontalAlignment="Left" Height="41" Margin="26,519,0,0" VerticalAlignment="Top" Width="108" Click="BtnBack_OnClick"/>
         </Grid>
     </Border>
 </Window>

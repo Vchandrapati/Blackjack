@@ -15,8 +15,8 @@
         </Border.Background>
         <Grid>
             <Image HorizontalAlignment="Left" Height="358" Margin="142,215,0,0" VerticalAlignment="Top" Width="1067" Stretch="Fill" Source="/Assets/Ribbon.png"/>
-            <Button x:Name="btnHit" Content="Hit" HorizontalAlignment="Left" Height="60" Margin="26,0,0,100" VerticalAlignment="Center" Width="145" FontSize="36" Click="BtnHit_OnClick"/>
-            <Button x:Name="btnStand" Content="Stand" HorizontalAlignment="Left" Height="60" Margin="26,400,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnStand_OnClick"/>
+            <Button x:Name="btnHit" Content="Hit" HorizontalAlignment="Left" Height="60" Margin="10,213,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnHit_OnClick"/>
+            <Button x:Name="btnStand" Content="Stand" HorizontalAlignment="Left" Height="60" Margin="10,293,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnStand_OnClick"/>
             <Button x:Name="btnRestart" Content="Restart" HorizontalAlignment="Left" Height="60" Margin="527.5,340,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="btnRestart_Click" Visibility="Hidden"/>
             <Image x:Name="Player_Card_2" HorizontalAlignment="Left" Margin="400,520,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
             <Image x:Name="Player_Card_3" HorizontalAlignment="Left" Margin="600,520,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
@@ -26,10 +26,10 @@
             <Image x:Name="Dealer_Card_3" HorizontalAlignment="Left" Margin="600,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
             <Image x:Name="Dealer_Card_1" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
             <Image x:Name="Dealer_Card_4" HorizontalAlignment="Left" Margin="800,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <StackPanel x:Name="Results"/>
             <TextBlock HorizontalAlignment="Left" Height="80" Margin="200,358,0,0" Text="BLACKJACK ★ PAYS ★ 3 TO 2" TextWrapping="Wrap" VerticalAlignment="Top" Width="951" FontSize="62" Foreground="#FFFFEE00" FontFamily="Cambria Math" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Height="29" Margin="400,319,0,0" Text="DealerEvaluate must draw on 16 and stand on 17" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" Foreground="Red" Cursor="" FontSize="30" TextAlignment="Center" FontFamily="Cambria Math"/>
-            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Height="60" Margin="26,482,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="btnRestart_Click"/>
+            <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Height="60" Margin="10,375,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="btnRestart_Click"/>
+            <Button x:Name="btnQuit" Content="Quit" HorizontalAlignment="Left" Height="60" Margin="10,460,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnQuit_OnClick"/>
         </Grid>
     </Border>
 </Window>

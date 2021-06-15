@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 
 namespace Blackjack
 {
-    internal class MySQLconnect
+    public class MySQLconnect
     {
         private const string Server = "us-cdbr-east-03.cleardb.com";
         private const string Database = "heroku_9286e40e3bf28d9";
@@ -71,22 +71,29 @@ namespace Blackjack
             try
             {
                 cmd.ExecuteNonQuery();
+                return true;
             }
             catch (Exception)
             {
                 MessageBox.Show("Error connecting to server");
             }
-            var read = cmd.ExecuteReader();
 
-            while (read.Read())
-            {
-                if (!read.GetString(0).Contains("1")) continue;
-                read.Close();
-                return true;
-            }
-
-            read.Close();
             return false;
+        }
+
+        public void Update(string user, string info, int data)
+        {
+            var query = $"UPDATE user_data SET {info}={data} WHERE username = '{user}';";
+            var cmd = new MySqlCommand(query, _connection);
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error connecting to server");
+            }
         }
 
         public int Info(string user, string info)

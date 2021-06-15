@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Threading;
 using System.Windows;
 using static Blackjack.Classes.Evaluator;
 using static Blackjack.Classes.Draw;
@@ -16,10 +17,17 @@ namespace Blackjack
                 UriKind.RelativeOrAbsolute));
 
         private readonly Initialiser _init = new Initialiser();
+        private readonly Update _update = new Update();
+
+        readonly DispatcherTimer dispatcherTimer = new DispatcherTimer();
 
         public Game_Board()
         {
             InitializeComponent();
+
+            dispatcherTimer.Tick += dispatcherTimer_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 2, 0);
+            dispatcherTimer.Start();
             Dealer_Card_1.Source = CardBack;
             Start();
         }
@@ -45,11 +53,10 @@ namespace Blackjack
                     break;
             }
 
-            if (PlayerEvaluate())
-            {
-                Dealer_Card_1.Source = DealerFlipped;
-                Start();
-            }
+            if (!PlayerEvaluate()) return;
+
+            Dealer_Card_1.Source = DealerFlipped;
+            Start();
         }
 
         private void BtnStand_OnClick(object sender, RoutedEventArgs e)
@@ -82,11 +89,10 @@ namespace Blackjack
                         break;
                 }
 
-            if (DealerEvaluate())
-            {
-                Dealer_Card_1.Source = DealerFlipped;
-                Start();
-            }
+            if (!DealerEvaluate()) return;
+
+            Dealer_Card_1.Source = DealerFlipped;
+            Start();
         }
 
         private void btnRestart_Click(object sender, RoutedEventArgs e)
@@ -96,6 +102,7 @@ namespace Blackjack
 
         public void Start()
         {
+            Games_Played++;
             btnRestart.Visibility = Visibility.Hidden;
             Stand = false;
             Shoe = _init.Initalise(); 
@@ -109,6 +116,7 @@ namespace Blackjack
             DealerHandValue = 0;
             PlayerAceCount = 0;
             DealerAceCount = 0;
+
 
             for (var i = 0; i < 2; i++)
             {
@@ -152,17 +160,28 @@ namespace Blackjack
                 }
             }
 
-            if (DealerEvaluate())
-            {
-                Dealer_Card_1.Source = DealerFlipped;
-                Start();
-            }
+            if (!DealerEvaluate()) return;
+            Dealer_Card_1.Source = DealerFlipped;
+            Start();
+            
 
-            if (PlayerEvaluate())
-            {
-                Dealer_Card_1.Source = DealerFlipped;
-                Start();
-            }
+            if (!PlayerEvaluate()) return;
+            Dealer_Card_1.Source = DealerFlipped;
+            Start();
+        }
+
+        private void BtnQuit_OnClick(object sender, RoutedEventArgs e)
+        {
+            _update.UpdateTable();
+
+            Home_Page hp = new Home_Page();
+            hp.Show();
+            Close();
+        }
+
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            _update.UpdateTable();
         }
     }
 }

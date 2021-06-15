@@ -1,11 +1,10 @@
 ﻿using System.Windows;
+using static Blackjack.Classes.Variables;
 
 namespace Blackjack
 {
     public partial class CreateAcc : Window
     {
-        private readonly MySQLconnect _sqlconnect;
-
         public CreateAcc()
         {
             InitializeComponent();

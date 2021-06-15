@@ -6,8 +6,6 @@ namespace Blackjack
 {
     public partial class MainWindow : Window
     {
-        private readonly MySQLconnect _sqlconnect;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +25,7 @@ namespace Blackjack
                 {
                     if (_sqlconnect.Login(txtUser.Text, txtPass.Password))
                     {
-                        user = txtUser.Text;
+                        User = txtUser.Text;
                         Home_Page hp = new Home_Page();
                         hp.Show();
                         Close();
@@ -59,7 +57,7 @@ namespace Blackjack
 
         private void BtnBrooker_OnClick(object sender, RoutedEventArgs e)
         {
-            user = "Guest";
+            User = "Guest";
             Guest = true;
             Home_Page hp = new Home_Page();
             hp.Show();

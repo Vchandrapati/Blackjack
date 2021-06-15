@@ -7,16 +7,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using static Blackjack.MySQLconnect;
+using static Blackjack.Classes.Variables;
 using MySql.Data.MySqlClient;
 
 namespace Blackjack
 {
     public partial class Leaderboards : Window
     {
-        public static bool guest;
-        public static string user = "";
-        private readonly MySQLconnect _sqlconnect;
-
         public Leaderboards()
         {
             InitializeComponent();
