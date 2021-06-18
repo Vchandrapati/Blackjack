@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pbY0xPGTXw6CDFJ2QZ+ZFmrKEAvyv3CZhj1tx0vgZYXbE36hAx7xDVixi7DRx9Qea7q2VjTqXTBcFyVUuD/r1w==",
+  "dgSpecHash": "fFSCt2WtuLVF2P6p4n+jHtcWcIvplh9pYyysE2oAgsb2ShOu679NEVr8f5VwFxTBUUG1g1ElZDuVmW0/wImpDQ==",
   "success": true,
   "projectFilePath": "D:\\School\\SSD Code\\Blackjack\\Blackjack\\Blackjack.csproj",
   "expectedPackageFiles": [
@@ -9,12 +9,12 @@
     "C:\\Users\\vchan\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\k4os.compression.lz4.streams\\1.1.11\\k4os.compression.lz4.streams.1.1.11.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",
-    "C:\\Users\\vchan\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
-    "C:\\Users\\vchan\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\vchan\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\vchan\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\mysql.data\\8.0.25\\mysql.data.8.0.25.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.1\\system.configuration.configurationmanager.4.4.1.nupkg.sha512",
-    "C:\\Users\\vchan\\.nuget\\packages\\system.drawing.common\\4.7.0\\system.drawing.common.4.7.0.nupkg.sha512",
+    "C:\\Users\\vchan\\.nuget\\packages\\system.drawing.common\\5.0.2\\system.drawing.common.5.0.2.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
     "C:\\Users\\vchan\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",

@@ -116,3 +116,9 @@ D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Leaderboards.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Leaderboards.baml
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Statistics.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Statistics.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csproj.ResolveComReference.cache
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
