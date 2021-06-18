@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\100_Chip.png" />
+    <None Remove="Assets\10_Chip.png" />
+    <None Remove="Assets\25_Chip.png" />
+    <None Remove="Assets\50_Chip.png" />
     <None Remove="Chip.png" />
     <None Remove="Fonts\CorporationGames.ttf" />
     <None Remove="Fonts\Final Gambit.otf" />
@@ -37,6 +41,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\100_Chip.png" />
+    <Resource Include="Assets\10_Chip.png" />
+    <Resource Include="Assets\25_Chip.png" />
+    <Resource Include="Assets\50_Chip.png" />
     <Resource Include="Assets\Chip.png" />
     <Resource Include="Assets\Circle pfp.png" />
     <Resource Include="Assets\Leader-Trophy.png" />

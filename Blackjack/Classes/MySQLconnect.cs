@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows;
+using static Blackjack.Classes.Variables;
 using MySql.Data.MySqlClient;
 
 namespace Blackjack
@@ -48,18 +49,42 @@ namespace Blackjack
 
             return true;
         }
+        public bool Close()
+        {
+            try
+            {
+                _connection.Close();
+            }
+            catch (MySqlException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 0:
+                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        break;
 
+                    case 1045:
+                        MessageBox.Show("Invalid username/password, please try again");
+                        break;
+                }
+                return false;
+            }
+
+            return true;
+        }
         public bool CreateUser(string user, string password)
         {
-            var query = $"INSERT INTO user_data (Username, Password, Level, Points, Money, Wins, Losses, Games_Played, Money_Won, Money_Lost, Pushes, Cards_Drawn) VALUES ('{user}', '{password}', 0, 0, 1000, 1, 0, 1, 0, 0, 0, 0);";
-            if (Connect())
+            var query = $"INSERT INTO user_data (Username, Password, Level, Points, Money, Wins, Losses, Games_Played, Money_Won, Money_Lost, Pushes, Cards_Drawn) VALUES ('{user}', '{password}', 0, 0, 10500, 1, 0, 1, 0, 0, 0, 0);";
+            try
             {
                 var cmd = new MySqlCommand(query, _connection);
                 cmd.ExecuteNonQuery();
                 return true;
             }
-
-            MessageBox.Show("There was an error connecting to the server");
+            catch (Exception)
+            {
+                MessageBox.Show("There was an error connecting to the server");
+            }
             return false;
         }
 
@@ -81,9 +106,9 @@ namespace Blackjack
             return false;
         }
 
-        public void Update(string user, string info, int data)
+        public void Update()
         {
-            var query = $"UPDATE user_data SET {info}={data} WHERE username = '{user}';";
+            var query = $"UPDATE user_data SET Level={Math.Floor(Points / 1000m) - 2m}, Points={Points}, Money={Money}, wins={Wins}, Losses={Losses}, Games_Played={GamesPlayed}, Money_Won={MoneyWon}, Money_Lost={MoneyLost}, Pushes={Pushes}, Cards_Drawn={CardsDrawn}  WHERE username = '{User}';";
             var cmd = new MySqlCommand(query, _connection);
 
             try

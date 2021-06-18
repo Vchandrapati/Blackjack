@@ -37,7 +37,7 @@ namespace Blackjack.Classes
                 PlayerHandValue += value;
             }
 
-            Cards_Drawn++;
+            CardsDrawn++;
             Shoe.Pop();
             return PlayerCardCount;
         }
@@ -73,7 +73,7 @@ namespace Blackjack.Classes
                 DealerHandValue += value;
             }
 
-            Cards_Drawn++;
+            CardsDrawn++;
             Shoe.Pop();
             return DealerCardCount;
         }

@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using static Blackjack.Classes.Variables;
 
 namespace Blackjack
@@ -16,23 +17,42 @@ namespace Blackjack
 
             if (Guest)
             {
+                Level = 2;
+                Money = 3000;
+                Points = 4000;
+                GamesPlayed = 0;
+                CardsDrawn = 0;
+                GamesPlayed = 0;
+                MoneyWon = 0;
+                MoneyLost = 0;
+                Wins = 0;
+                Losses = 0;
+                Pushes = 0;
+
                 txtLevel.Text = "2";
                 txtMoney.Text = "$3000";
                 txtPoints.Text = "4000 Points";
             }
             else
             {
-                Losses = _sqlconnect.Info(User, "Losses");
-                Wins = _sqlconnect.Info(User, "Wins");
-                Games_Played = _sqlconnect.Info(User, "Games_Played");
-                Money_Won = _sqlconnect.Info(User, "Money_Won");
-                Money_Lost = _sqlconnect.Info(User, "Money_Lost");
-                Pushes = _sqlconnect.Info(User, "Pushes");
-                Cards_Drawn = _sqlconnect.Info(User, "Cards_Drawn");
+                if (!Once)
+                {
+                    Losses = _sqlconnect.Info(User, "Losses");
+                    Wins = _sqlconnect.Info(User, "Wins");
+                    GamesPlayed = _sqlconnect.Info(User, "Games_Played");
+                    MoneyWon = _sqlconnect.Info(User, "Money_Won");
+                    MoneyLost = _sqlconnect.Info(User, "Money_Lost");
+                    Pushes = _sqlconnect.Info(User, "Pushes");
+                    CardsDrawn = _sqlconnect.Info(User, "Cards_Drawn");
+                    Level = Math.Floor(_sqlconnect.Info(User, "Points") / 1000m) - 2m;
+                    Money = _sqlconnect.Info(User, "Money");
+                    Points = _sqlconnect.Info(User, "Points");
+                    Once = true;
+                }
 
-                txtLevel.Text = $"{_sqlconnect.Info(User, "Level") / 1000}";
-                txtMoney.Text = $"${_sqlconnect.Info(User, "Money")}";
-                txtPoints.Text = $"{_sqlconnect.Info(User, "Points")}";
+                txtLevel.Text = $"{Level}";
+                txtMoney.Text = $"${Money}";
+                txtPoints.Text = $"{Points}";
             }
         }
 

@@ -18,10 +18,6 @@ namespace Blackjack
         {
             InitializeComponent();
 
-            _sqlconnect = new MySQLconnect();
-
-            _sqlconnect.Connect();
-
             DataTable lb = new DataTable();
             using (MySqlConnection conn = new MySqlConnection(connectionstring))
             {

@@ -13,13 +13,13 @@ namespace Blackjack
 
             txtUser.Text = User;
             txtLR.Text = Losses.ToString();
-            txtWRR.Text = (Convert.ToDecimal(Wins) / Convert.ToDecimal(Games_Played) * 100m).ToString("##.##") + "%";
+            txtWRR.Text = (Convert.ToDecimal(Wins) / Convert.ToDecimal(GamesPlayed) * 100m).ToString("##.##") + "%";
             txtWR1.Text = Wins.ToString();
-            txtGPR.Text = Games_Played.ToString();
-            txtMWR.Text = $"${Money_Won}";
-            txtMLR.Text = $"${Money_Lost}";
+            txtGPR.Text = GamesPlayed.ToString();
+            txtMWR.Text = $"${MoneyWon}";
+            txtMLR.Text = $"${MoneyLost}";
             txtPR.Text = Pushes.ToString();
-            txtCDR.Text = Cards_Drawn.ToString();
+            txtCDR.Text = CardsDrawn.ToString();
         }
 
         private void BtnBack_OnClick(object sender, RoutedEventArgs e)

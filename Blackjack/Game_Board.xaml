@@ -6,6 +6,174 @@
         xmlns:local="clr-namespace:Blackjack"
         mc:Ignorable="d"
         Title="Game_Board" Height="800" Width="1200" WindowStyle="None" ResizeMode="NoResize" Background="{x:Null}" AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="25_Chip" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Image Source="/Assets/10_Chip.png"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual1">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border1" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border1" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground1" Color="#FF838383"/>
+        <Style x:Key="25Chip" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual1}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background1}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border1}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Image Height="100" Width="100" Source="/Assets/25_Chip.png"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual2">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background2" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border2" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background2" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border2" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background2" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border2" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background2" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF838383"/>
+        <Style x:Key="50Chip" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual2}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background2}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border2}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Image Height="100" Width="100" Source="/Assets/50_Chip.png"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="FocusVisual3">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background3" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border3" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background3" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border3" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background3" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border3" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background3" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border3" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground3" Color="#FF838383"/>
+        <Style x:Key="HundredChip" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background3}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border3}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Image Height="100" Width="100" Source="/Assets/100_Chip.png"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Border CornerRadius="25,25,25,25">
         <Border.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="1,2">
@@ -14,22 +182,23 @@
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-            <Image HorizontalAlignment="Left" Height="358" Margin="142,215,0,0" VerticalAlignment="Top" Width="1067" Stretch="Fill" Source="/Assets/Ribbon.png"/>
             <Button x:Name="btnHit" Content="Hit" HorizontalAlignment="Left" Height="60" Margin="10,213,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnHit_OnClick"/>
             <Button x:Name="btnStand" Content="Stand" HorizontalAlignment="Left" Height="60" Margin="10,293,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnStand_OnClick"/>
             <Button x:Name="btnRestart" Content="Restart" HorizontalAlignment="Left" Height="60" Margin="527.5,340,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="btnRestart_Click" Visibility="Hidden"/>
-            <Image x:Name="Player_Card_2" HorizontalAlignment="Left" Margin="400,520,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <Image x:Name="Player_Card_3" HorizontalAlignment="Left" Margin="600,520,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <Image x:Name="Player_Card_1" HorizontalAlignment="Left" Margin="200,520,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <Image x:Name="Player_Card_4" HorizontalAlignment="Left" Margin="800,520,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <Image x:Name="Dealer_Card_2" HorizontalAlignment="Left" Margin="400,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <Image x:Name="Dealer_Card_3" HorizontalAlignment="Left" Margin="600,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <Image x:Name="Dealer_Card_1" HorizontalAlignment="Left" Margin="200,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <Image x:Name="Dealer_Card_4" HorizontalAlignment="Left" Margin="800,50,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
-            <TextBlock HorizontalAlignment="Left" Height="80" Margin="200,358,0,0" Text="BLACKJACK ★ PAYS ★ 3 TO 2" TextWrapping="Wrap" VerticalAlignment="Top" Width="951" FontSize="62" Foreground="#FFFFEE00" FontFamily="Cambria Math" TextAlignment="Center"/>
-            <TextBlock HorizontalAlignment="Left" Height="29" Margin="400,319,0,0" Text="DealerEvaluate must draw on 16 and stand on 17" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" Foreground="Red" Cursor="" FontSize="30" TextAlignment="Center" FontFamily="Cambria Math"/>
+            <Image x:Name="Player_Card_2" HorizontalAlignment="Left" Margin="494,514,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <Image x:Name="Player_Card_3" HorizontalAlignment="Left" Margin="694,514,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <Image x:Name="Player_Card_1" HorizontalAlignment="Left" Margin="294,514,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <Image x:Name="Player_Card_4" HorizontalAlignment="Left" Margin="894,514,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <Image x:Name="Dealer_Card_2" HorizontalAlignment="Left" Margin="494,46,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <Image x:Name="Dealer_Card_3" HorizontalAlignment="Left" Margin="694,46,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <Image x:Name="Dealer_Card_1" HorizontalAlignment="Left" Margin="294,46,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <Image x:Name="Dealer_Card_4" HorizontalAlignment="Left" Margin="894,46,0,0" VerticalAlignment="Top" Width="150" Height="230"/>
+            <TextBlock HorizontalAlignment="Left" Height="72" Margin="200,372,0,0" Text="BLACKJACK ★ PAYS ★ 3 TO 2" TextWrapping="Wrap" VerticalAlignment="Top" Width="951" FontSize="62" Foreground="#FFFFEE00" FontFamily="Cambria Math" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Height="29" Margin="382,332,0,0" Text="Dealer must draw on 16 and stand on 17" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" Foreground="Red" Cursor="" FontSize="30" TextAlignment="Center" FontFamily="Cambria Math"/>
             <Button x:Name="btnStart" Content="Start" HorizontalAlignment="Left" Height="60" Margin="10,375,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="btnRestart_Click"/>
             <Button x:Name="btnQuit" Content="Quit" HorizontalAlignment="Left" Height="60" Margin="10,460,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnQuit_OnClick"/>
+            <TextBlock x:Name="txtPot" HorizontalAlignment="Left" Height="46" Margin="382,438,0,0" Text="Pot: $0" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" FontSize="40" FontFamily="Cambria Math" Foreground="Red" TextAlignment="Center"/>
+            <TextBlock x:Name="txtMoney" HorizontalAlignment="Left" Height="41" Margin="10,555,0,0" Text="Money: $" TextWrapping="Wrap" VerticalAlignment="Top" Width="259" FontSize="30" FontFamily="Cambria Math"/>
         </Grid>
     </Border>
 </Window>
