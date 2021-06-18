@@ -7,6 +7,7 @@ namespace Blackjack
 {
     public class MySQLconnect
     {
+        //Connection links
         private const string Server = "us-cdbr-east-03.cleardb.com";
         private const string Database = "heroku_9286e40e3bf28d9";
         private const string Uid = "b40c5e8fda029a";
@@ -22,6 +23,7 @@ namespace Blackjack
 
         private void Init()
         {
+            //Initialising connection
             connectionstring = $"Server={Server}; Port={Port}; Database={Database}; Uid={Uid}; Pwd={Password};";
             _connection = new MySqlConnection(connectionstring);
         }
@@ -37,7 +39,7 @@ namespace Blackjack
                 switch (ex.Number)
                 {
                     case 0:
-                        MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        MessageBox.Show("Cannot connect to server. Contact administrator");
                         break;
 
                     case 1045:
@@ -74,6 +76,7 @@ namespace Blackjack
         }
         public bool CreateUser(string user, string password)
         {
+            //MySQL query to create a new user
             var query = $"INSERT INTO user_data (Username, Password, Level, Points, Money, Wins, Losses, Games_Played, Money_Won, Money_Lost, Pushes, Cards_Drawn) VALUES ('{user}', '{password}', 0, 0, 10500, 1, 0, 1, 0, 0, 0, 0);";
             try
             {
@@ -90,6 +93,7 @@ namespace Blackjack
 
         public bool Login(string user, string password)
         {
+            //MySQL query to login
             var query = $"SELECT EXISTS(SELECT * FROM user_data WHERE username = '{user}' AND password = '{password}');";
             var cmd = new MySqlCommand(query, _connection);
 
@@ -108,6 +112,7 @@ namespace Blackjack
 
         public void Update()
         {
+            //MySQL query to update the database
             var query = $"UPDATE user_data SET Level={Math.Floor(Points / 1000m) - 2m}, Points={Points}, Money={Money}, wins={Wins}, Losses={Losses}, Games_Played={GamesPlayed}, Money_Won={MoneyWon}, Money_Lost={MoneyLost}, Pushes={Pushes}, Cards_Drawn={CardsDrawn}  WHERE username = '{User}';";
             var cmd = new MySqlCommand(query, _connection);
 
@@ -123,6 +128,7 @@ namespace Blackjack
 
         public int Info(string user, string info)
         {
+            //MySQL query to retrieve player data
             var query = $"SELECT {info} FROM user_data WHERE username = '{user}';";
             var cmd = new MySqlCommand(query, _connection);
 

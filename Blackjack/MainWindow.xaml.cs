@@ -18,12 +18,15 @@ namespace Blackjack
 
         private void BtnLogin_OnClick(object sender, RoutedEventArgs e)
         {
+            //If server connection  login
             if (Connection)
             {
+                //Check if fields have values
                 if (txtUser.Text == "" || txtPass.Password == "")
                     MessageBox.Show("Please enter a Username and/or Password");
                 else
                 {
+                    //Logging in
                     if (_sqlconnect.Login(txtUser.Text, txtPass.Password))
                     {
                         User = txtUser.Text;
@@ -46,6 +49,7 @@ namespace Blackjack
 
         private void BtnCreate_OnClick(object sender, RoutedEventArgs e)
         {
+            //Checking for server connection
             if (Connection)
             {
                 CreateAcc ca = new CreateAcc();
@@ -58,6 +62,7 @@ namespace Blackjack
 
         private void BtnBrooker_OnClick(object sender, RoutedEventArgs e)
         {
+            //Setting guest preferences
             User = "Guest";
             Guest = true;
             Home_Page hp = new Home_Page();

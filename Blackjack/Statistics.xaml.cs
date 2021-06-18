@@ -18,9 +18,11 @@ namespace Blackjack
         {
             InitializeComponent();
 
+            //Setting pfp
             pfp.Source = Skin;
 
-                    txtUser.Text = User;
+            //Setting player data
+            txtUser.Text = User;
             txtLR.Text = Losses.ToString();
             WR = (Convert.ToDecimal(Wins) / Convert.ToDecimal(GamesPlayed) * 100m).ToString("##.##") + "%";
             txtWRR.Text = WR;
@@ -41,12 +43,16 @@ namespace Blackjack
 
         private void BtnPrint_OnClick(object sender, RoutedEventArgs e)
         {
+            //String interpolation, to set print string
             string Statistics = $"Username: {User} \r\n Losses: {Losses} \r\n Wins: {Wins} \r\n Win Rate: {WR} \r\n Games Played: {GamesPlayed} \r\n Money Won: ${MoneyWon} \r\n Money Lost: {MoneyLost} \r\n Pushes: {Pushes} \r\n Cards Drawn: {CardsDrawn}";
 
+            //Initialising printing
             PrintDocument StatsDoc = new PrintDocument();
 
+            //Printing
             StatsDoc.PrintPage += delegate(object sender1, PrintPageEventArgs e1)
             {
+                //Setting print style
                 e1.Graphics.DrawString(Statistics, new Font("Times New Roman", 12), new SolidBrush(Color.Black),
                     new RectangleF(0, 0, StatsDoc.DefaultPageSettings.PrintableArea.Width,
                         StatsDoc.DefaultPageSettings.PrintableArea.Height));

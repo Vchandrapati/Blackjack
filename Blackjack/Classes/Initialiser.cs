@@ -9,6 +9,7 @@ namespace Blackjack.Classes
     {
         public Stack<Tuple<string, int>> Initalise()
         {
+            //The deck itself arranged into suits into a Stack
             #region Deck
             Stack<Tuple<string, int>> Shoe = new Stack<Tuple<string, int>>();
             Shoe.Push(Tuple.Create("AS", 11));
@@ -77,10 +78,13 @@ namespace Blackjack.Classes
             Shoe.Push(Tuple.Create("KD", 10));
             #endregion
 
+            //Creating a temp deck to shuffle
             var decktmp = Shoe.ToArray();
             Shoe.Clear();
+            //Shuffling
             decktmp.Shuffle();
             
+            //Transferring array back to stack
             foreach (var card in decktmp)
                 Shoe.Push(card);
 

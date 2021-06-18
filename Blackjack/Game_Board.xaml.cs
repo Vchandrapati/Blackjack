@@ -13,10 +13,12 @@ namespace Blackjack
 {
     public partial class Game_Board
     { 
+        //Setting the first card of the dealer to be face down
         public static ImageSource CardBack =
             new BitmapImage(new Uri(@$"{AppDomain.CurrentDomain.BaseDirectory}//Cards//black_back.bmp",
                 UriKind.RelativeOrAbsolute));
 
+        //Setting local variables
         private readonly Initialiser _init = new Initialiser();
         private readonly Update _update = new Update();
         private static Random _points = new Random();
@@ -25,6 +27,7 @@ namespace Blackjack
         {
             InitializeComponent();
 
+            //Starting game
             Restart();
             txtMoney.Text = $"Money: ${Money}";
             Pot = 250;
@@ -34,6 +37,7 @@ namespace Blackjack
 
         private void BtnHit_OnClick(object sender, RoutedEventArgs e)
         {
+            //Return from the draw class to set the image of the card
             switch (PlayerDraw())
             {
                 case 1:
@@ -55,18 +59,22 @@ namespace Blackjack
                     break;
             }
 
+            //Hand evaluation
             PlayerEvaluate();
          }
 
         private void BtnStand_OnClick(object sender, RoutedEventArgs e)
         {
+            //Switching to dealer's turn
             Stand = true;
+            //Revealing dealer's face down card
             Dealer_Card_1.Source = DealerFlipped;
             DealerTurn();
         }
 
         public void DealerTurn()
         {
+            //If the dealer's hand value is less then 17 they must draw otherwise stand
             while (DealerHandValue < 17 && Stand)
                 switch (DealerDraw())
                 {
@@ -90,6 +98,7 @@ namespace Blackjack
                         break;
                 }
 
+            //Standing on 17 or above
             if(DealerHandValue >= 17)
                 DealerEvaluate();
         }
@@ -101,6 +110,7 @@ namespace Blackjack
 
         public void Restart()
         {
+            //Resetting local variables to defaults
             Push = false;
             GamesPlayed++;
             Stand = false;
@@ -131,7 +141,9 @@ namespace Blackjack
                 Close();
             }
 
+            //Shuffling the deck
             Shoe = _init.Initalise();
+            //Drawing cards for both players
             for (var i = 0; i < 2; i++)
             {
                 switch (PlayerDraw())
@@ -175,15 +187,18 @@ namespace Blackjack
                 }
             }
 
+            //Evaluating Hands
             DealerEvaluate();
             PlayerEvaluate();
         }
 
         private void BtnQuit_OnClick(object sender, RoutedEventArgs e)
         {
+            //If there is a connection to the server or if the player is not a guest update server data
             if (Connection || !Guest)
                 _update.UpdateTable();
 
+            //Back to home page
             Home_Page hp = new Home_Page();
             hp.Show();
             Close();
@@ -191,15 +206,18 @@ namespace Blackjack
 
         public void DealerEvaluate()
         {
+            //Blackjack Case
             if (DealerHandValue == 21 && DealerAceCount == 1)
             {
                 Dealer_Card_1.Source = DealerFlipped;
                 MessageBox.Show($"Dealer won with a Blackjack, Player lost ${Pot}");
                 Losses++;
                 MoneyLost += Pot;
+                //randomising player xp
                 Points += _points.Next(250);
                 Restart();
             }
+            //Making sure to account for Ace's
             if (DealerHandValue > 21 && DealerAceCount > 0)
             {
                 while (DealerHandValue > 21)
@@ -209,6 +227,7 @@ namespace Blackjack
                     DealerAceCount--;
                 }
             }
+            //Checking to see if the dealer loses
             else if (DealerHandValue > 21 && DealerAceCount == 0 || DealerHandValue > 17 && DealerHandValue > 21)
             {
                 Dealer_Card_1.Source = DealerFlipped;
@@ -216,9 +235,11 @@ namespace Blackjack
                 Money += Pot * 2;
                 Wins++;
                 MoneyWon += Pot * 2;
+                //randomising player xp
                 Points += _points.Next(100);
                 Restart();
             }
+            //Checking to see if the player loses
             else if (DealerHandValue > 17 && DealerHandValue == 21 ||
                      DealerHandValue == 17 && DealerHandValue > PlayerHandValue)
             {
@@ -226,9 +247,11 @@ namespace Blackjack
                 MessageBox.Show($"Dealer won, Player lost ${Pot}");
                 Losses++;
                 MoneyLost += Pot;
+                //randomising player xp
                 Points += _points.Next(25);
                 Restart();
             }
+            //Checking to see if the Player Wins
             else if (DealerHandValue == 17 && DealerHandValue < PlayerHandValue ||
                      DealerHandValue > 17 && DealerHandValue < PlayerHandValue)
             {
@@ -237,15 +260,18 @@ namespace Blackjack
                 Money += Pot * 2;
                 Wins++;
                 MoneyWon += Pot * 2;
+                //randomising player xp
                 Points += _points.Next(100);
                 Restart();
             }
+            //Checking for push
             else if(DealerHandValue == PlayerHandValue)
             {
                 Dealer_Card_1.Source = DealerFlipped;
                 MessageBox.Show($"Push");
                 Money += Pot;
                 Pushes++;
+                //randomising player xp
                 Points += _points.Next(50);
                 Restart();
             }
@@ -253,6 +279,7 @@ namespace Blackjack
 
         public void PlayerEvaluate()
         {
+            //Checking for Blackjack
             if (PlayerHandValue == 21 && PlayerAceCount == 1)
             {
                 Dealer_Card_1.Source = DealerFlipped;
@@ -260,10 +287,11 @@ namespace Blackjack
                 Money += Pot * 2.5;
                 Wins++;
                 MoneyWon += Pot * 2.5;
+                //randomising player xp
                 Points += _points.Next(250);
                 Restart();
             }
-
+            //Accounting for Ace's
             if (PlayerHandValue > 21 && PlayerAceCount > 0)
             {
                 while (PlayerHandValue > 21)
@@ -273,15 +301,18 @@ namespace Blackjack
                     PlayerAceCount--;
                 }
             }
+            //Checking to see if the Dealer wins
             else if (PlayerHandValue > 21 && PlayerAceCount == 0 || DealerHandValue == PlayerHandValue)
             {
                 Dealer_Card_1.Source = DealerFlipped;
                 MessageBox.Show($"Player went bust and lost ${Pot}");
                 Losses++;
                 MoneyLost += Pot;
+                //randomising player xp
                 Points += _points.Next(25);
                 Restart();
             }
+            //Checking to see if the Player Wins
             else if (PlayerHandValue == 21)
             {
                 Dealer_Card_1.Source = DealerFlipped;
@@ -289,15 +320,18 @@ namespace Blackjack
                 Money += Pot * 2;
                 Wins++;
                 MoneyWon += Pot * 2;
+                //randomising player xp
                 Points += _points.Next(100);
                 Restart();
             }
+            //Checking for push
             else if (DealerHandValue == PlayerHandValue)
             {
                 Dealer_Card_1.Source = DealerFlipped;
                 MessageBox.Show($"Push");
                 Money += Pot;
                 Pushes++;
+                //randomising player xp
                 Points += _points.Next(50);
                 Restart();
             }

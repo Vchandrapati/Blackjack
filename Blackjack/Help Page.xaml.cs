@@ -11,14 +11,11 @@ namespace Blackjack
         public HelpPage()
         {
             InitializeComponent();
-
-            _sqlconnect = new MySQLconnect();
-
-            Connection = _sqlconnect.Connect();
         }
 
         private void BtnWeb_OnClick(object sender, RoutedEventArgs e)
         {
+            //Opening web help
             try
             {
                 Process.Start("cmd", "/c start https://bicyclecards.com/how-to-play/blackjack/");
@@ -31,6 +28,7 @@ namespace Blackjack
 
         private void BtnEmail_OnClick(object sender, RoutedEventArgs e)
         {
+            //Email Devs
             EmailPage ep = new EmailPage();
             ep.Show();
         }

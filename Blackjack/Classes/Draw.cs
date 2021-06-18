@@ -8,9 +8,12 @@ namespace Blackjack.Classes
     {
         public static int PlayerDraw()
         {
+            //Gets the suit of the card 
             var suit = Shoe.Peek().Item1;
+            //Gets the value of the card
             var value = Shoe.Peek().Item2;
 
+            //Check if the card is an Ace
             if (suit.Contains("A"))
             {
                 DrawnCard = new BitmapImage(new Uri(
@@ -20,6 +23,7 @@ namespace Blackjack.Classes
                 PlayerCardCount++;
                 PlayerHandValue += 11;
             }
+            //Check to see if it is a face card
             else if (suit.Length == 2)
             {
                 DrawnCard = new BitmapImage(new Uri(
@@ -28,6 +32,7 @@ namespace Blackjack.Classes
                 PlayerCardCount++;
                 PlayerHandValue += 10;
             }
+            //Any other card
             else
             {
                 DrawnCard = new BitmapImage(new Uri(
@@ -38,15 +43,19 @@ namespace Blackjack.Classes
             }
 
             CardsDrawn++;
+            //Remove card from stack
             Shoe.Pop();
             return PlayerCardCount;
         }
 
         public static int DealerDraw()
         {
+            //Gets the suit of the card 
             var suit = Shoe.Peek().Item1;
+            //Gets the value of the card
             var value = Shoe.Peek().Item2;
 
+            //Check if the card is an Ace
             if (suit.Contains("A"))
             {
                 DrawnCard = new BitmapImage(new Uri(
@@ -56,6 +65,7 @@ namespace Blackjack.Classes
                 DealerCardCount++;
                 DealerHandValue += 11;
             }
+            //Check to see if it is a face card
             else if (suit.Length == 2)
             {
                 DrawnCard = new BitmapImage(new Uri(
@@ -64,6 +74,7 @@ namespace Blackjack.Classes
                 DealerCardCount++;
                 DealerHandValue += 10;
             }
+            //Any other card
             else
             {
                 DrawnCard = new BitmapImage(new Uri(
@@ -74,6 +85,7 @@ namespace Blackjack.Classes
             }
 
             CardsDrawn++;
+            //Remove card from stack
             Shoe.Pop();
             return DealerCardCount;
         }

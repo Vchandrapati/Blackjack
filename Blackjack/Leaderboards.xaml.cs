@@ -19,6 +19,7 @@ namespace Blackjack
         {
             InitializeComponent();
 
+            //Retrieving all player data and sorting by descending
             DataTable lb = new DataTable();
             using (MySqlConnection conn = new MySqlConnection(connectionstring))
             {
@@ -33,6 +34,7 @@ namespace Blackjack
 
         private void dgLeaders_Loaded(object sender, RoutedEventArgs e)
         {
+            //Resisizing columns
             dgLeaders.Columns[0].Width = 120;
             dgLeaders.Columns[1].Width = 100;
             dgLeaders.Columns[2].Width = 200;

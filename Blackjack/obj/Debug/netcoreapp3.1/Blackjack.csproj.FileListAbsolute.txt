@@ -4,7 +4,6 @@ D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtime
 D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.runtimeconfig.dev.json
 D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.dll
 D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\Blackjack.pdb
-D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csprojAssemblyReference.cache
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Home_Page.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\App.g.cs
@@ -128,3 +127,4 @@ D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Email Us.baml
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Help Page.baml
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Skins.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Skins.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Blackjack.csprojAssemblyReference.cache

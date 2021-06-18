@@ -15,8 +15,10 @@ namespace Blackjack
             InitializeComponent();
             txtuser.Text = User;
 
+            //Reading player preferences
             var skin = File.ReadAllText(_path);
 
+            //Checking to see which skin the player has chosen
             switch (skin)
             {
                 case "1":
@@ -37,7 +39,7 @@ namespace Blackjack
                     break;
             }
 
-
+            //Guest login defaults
             if (Guest)
             {
                 Level = 2;
@@ -58,6 +60,7 @@ namespace Blackjack
             }
             else
             {
+                //To prevent high load time player data is retrieved once upon first login
                 if (!Once)
                 {
                     Losses = _sqlconnect.Info(User, "Losses");
@@ -73,6 +76,7 @@ namespace Blackjack
                     Once = true;
                 }
 
+                //Setting values based on player data
                 txtLevel.Text = $"{Level}";
                 txtMoney.Text = $"${Money}";
                 txtPoints.Text = $"{Points}";
@@ -88,6 +92,7 @@ namespace Blackjack
 
         private void BtnBoards_OnClick(object sender, RoutedEventArgs e)
         {
+            //If there is a server connection open leaderboards else don't
             if (Connection)
             {
                 Leaderboards lb = new Leaderboards();
@@ -102,6 +107,7 @@ namespace Blackjack
 
         private void btnStatistics_OnClick(object sender, RoutedEventArgs e)
         {
+            //If there is a server connection open statistics else don't
             if (Connection)
             {
                 Statistics st = new Statistics();

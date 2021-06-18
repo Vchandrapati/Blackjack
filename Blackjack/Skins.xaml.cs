@@ -19,20 +19,22 @@ namespace Blackjack
             Button skin = (Button) sender;
             var Selected = skin.Name.Split('_');
             
-            if (Selected[1] == "1")
+            //Checking which skin they selected and saving it
+            switch (Selected[1])
             {
-                SkinSelected = 1;
-                File.WriteAllText(_path, "1");
-            }
-            else if (Selected[1] == "2")
-            {
-                SkinSelected = 2;
-                File.WriteAllText(_path, "2");
-            }
-            else if (Selected[1] == "3")
-            {
-                SkinSelected = 3;
-                File.WriteAllText(_path, "3");
+                case "1":
+                    SkinSelected = 1;
+                    //Writing the skin they selected to the Player Preferences file
+                    File.WriteAllText(_path, "1");
+                    break;
+                case "2":
+                    SkinSelected = 2;
+                    File.WriteAllText(_path, "2");
+                    break;
+                case "3":
+                    SkinSelected = 3;
+                    File.WriteAllText(_path, "3");
+                    break;
             }
         }
 

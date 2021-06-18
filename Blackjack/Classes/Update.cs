@@ -7,12 +7,14 @@ namespace Blackjack.Classes
     {
         public void UpdateTable()
         {
+            //Checking to see if there is a server connection
             if (!Connection) return;
 
             _sqlconnect.Close();
             _sqlconnect.Connect();
             _sqlconnect.Update();
 
+            //Retrieving player data
             Level = Math.Floor(_sqlconnect.Info(User, "Points") / 1000m) - 2m;
             Losses = _sqlconnect.Info(User, "Losses");
             Wins = _sqlconnect.Info(User, "Wins");

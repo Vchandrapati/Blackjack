@@ -6,6 +6,7 @@ namespace Blackjack.Classes
 {
     public class Variables
     {
+        //A list of all the shared variables used throughout the whole project
         public static bool Once { get; set; }
         public static ImageSource DealerFlipped { get; set; }
         public static ImageSource DrawnCard { get; set; }
