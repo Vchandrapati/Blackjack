@@ -33,5 +33,9 @@ namespace Blackjack.Classes
         public static dynamic Level { get; set; }
         public static dynamic Points { get; set; }
         public static MySQLconnect _sqlconnect { get; set; }
+        public static int SkinSelected { get; set; }
+
+        public static string _path = @$"{AppDomain.CurrentDomain.BaseDirectory}//Player_Preferences.txt";
+        public static ImageSource Skin { get; set; }
     }
 }

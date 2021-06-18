@@ -333,7 +333,7 @@
                                     </LinearGradientBrush>
                                 </Rectangle.Fill>
                             </Rectangle>
-                            <TextBlock HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" Text="SHOP" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="36" FontFamily="Bungee Inline"/>
+                            <TextBlock HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="125" FontSize="36" FontFamily="Bungee Inline" Text="Skinss"/>
                             <Image HorizontalAlignment="Left" Height="75" Margin="10,80,0,0" VerticalAlignment="Top" Width="80" Stretch="Fill" Source="/Assets/Shop.png"/>
                         </Grid>
                         <ControlTemplate.Triggers>
@@ -411,7 +411,7 @@
             </Grid.RowDefinitions>
             <Button x:Name="BtnBoards" Style="{DynamicResource btnLeaderboard}" HorizontalAlignment="Left" Height="160" Margin="40,2,0,0" VerticalAlignment="Top" Width="345" Click="BtnBoards_OnClick" Grid.Row="1"/>
             <TextBlock x:Name="txtuser" HorizontalAlignment="Left" Height="51" Margin="72,12,0,0" Text="Username" TextWrapping="Wrap" VerticalAlignment="Top" Width="179" FontFamily="Bungee Inline" Foreground="White" FontSize="22"/>
-            <Image Margin="3,8,532,0" Stretch="Fill" Source="/Assets/Circle pfp.png" Height="65" VerticalAlignment="Top" RenderTransformOrigin="0.513,1.433" Width="65"/>
+            <Image x:Name="pfp" Margin="3,8,532,0" Stretch="Fill" Source="/Assets/Circle pfp.png" Height="65" VerticalAlignment="Top" RenderTransformOrigin="0.513,1.433" Width="65"/>
             <Image Height="50" VerticalAlignment="Center" Source="/Assets/Trophy.png" Margin="221,0,329,0" Stretch="Fill" Width="50" RenderTransformOrigin="0.972,0.928"/>
             <TextBlock x:Name="txtPoints" HorizontalAlignment="Left" Height="51" Margin="271,12,0,0" Text="Points" TextWrapping="Wrap" VerticalAlignment="Top" Width="131" FontFamily="Bungee Inline" Foreground="White" FontSize="22"/>
             <Image HorizontalAlignment="Left" Height="50" Margin="385,0,0,0" VerticalAlignment="Center" Width="65" Source="Assets/Chip.png" Stretch="Fill"/>
@@ -419,7 +419,7 @@
             <Button Style="{DynamicResource btnStatistics}" x:Name="btnStatistics" Content="Button" HorizontalAlignment="Left" Height="160" Margin="398,2,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" Click="btnStatistics_OnClick"/>
             <Button x:Name="btnStart" Style="{DynamicResource btnStart}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="398,174,0,0" VerticalAlignment="Top" Width="165" Click="BtnStart_OnClick" Grid.Row="1"/>
             <Button x:Name="btnHelp" Style="{DynamicResource btnSetting}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="40,174,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" Click="BtnHelp_OnClick"/>
-            <Button x:Name="btnShop" Style="{DynamicResource btnShop}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="219,174,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1"/>
+            <Button x:Name="btnShop" Style="{DynamicResource btnShop}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="219,174,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" Click="BtnShop_OnClick"/>
             <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="4,47,0,0" Text="Level" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" FontFamily="Bungee Inline" Panel.ZIndex="10" Foreground="Black" TextAlignment="Center" FontSize="16" Grid.RowSpan="2"/>
         </Grid>
     </Border>

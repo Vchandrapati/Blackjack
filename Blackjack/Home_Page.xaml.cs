@@ -1,5 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using static Blackjack.Classes.Variables;
 
 namespace Blackjack
@@ -11,9 +14,28 @@ namespace Blackjack
             InitializeComponent();
             txtuser.Text = User;
 
-            _sqlconnect = new MySQLconnect();
+            var skin = File.ReadAllText(_path);
 
-            Connection = _sqlconnect.Connect();
+            switch (skin)
+            {
+                case "1":
+                    Skin = new BitmapImage(new Uri(@$"/Assets/Cards_pfp.png", UriKind.RelativeOrAbsolute));
+                    pfp.Source = Skin;
+                    break;
+                case "2":
+                    Skin = new BitmapImage(new Uri(@$"/Assets/Chips_pfp.png", UriKind.RelativeOrAbsolute));
+                    pfp.Source = Skin;
+                    break;
+                case "3":
+                    Skin = new BitmapImage(new Uri(@$"/Assets/Circle pfp.png", UriKind.RelativeOrAbsolute));
+                    pfp.Source = Skin;
+                    break;
+                default:
+                    Skin = new BitmapImage(new Uri(@$"/Assets/Circle pfp.png", UriKind.RelativeOrAbsolute));
+                    pfp.Source = Skin;
+                    break;
+            }
+
 
             if (Guest)
             {
@@ -95,6 +117,13 @@ namespace Blackjack
         {
             HelpPage hp = new HelpPage();
             hp.Show();
+        }
+
+        private void BtnShop_OnClick(object sender, RoutedEventArgs e)
+        {
+            Skins s = new Skins();
+            s.Show();
+            Close();
         }
     }
 }

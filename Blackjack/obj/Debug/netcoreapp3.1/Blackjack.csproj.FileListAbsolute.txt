@@ -126,3 +126,5 @@ D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Email Us.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Help Page.g.cs
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Email Us.baml
 D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Help Page.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Skins.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Skins.baml

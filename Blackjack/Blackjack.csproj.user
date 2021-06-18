@@ -15,6 +15,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Skins.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Email Us.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Help Page.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Statistics.xaml">
       <SubType>Designer</SubType>
     </Page>

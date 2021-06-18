@@ -2,7 +2,9 @@
 using System;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.IO;
 using System.Printing;
+using System.Windows.Media.Imaging;
 using Blackjack.Classes;
 using static Blackjack.Classes.Variables;
 
@@ -15,7 +17,9 @@ namespace Blackjack
         {
             InitializeComponent();
 
-            txtUser.Text = User;
+            pfp.Source = Skin;
+
+                    txtUser.Text = User;
             txtLR.Text = Losses.ToString();
             WR = (Convert.ToDecimal(Wins) / Convert.ToDecimal(GamesPlayed) * 100m).ToString("##.##") + "%";
             txtWRR.Text = WR;
