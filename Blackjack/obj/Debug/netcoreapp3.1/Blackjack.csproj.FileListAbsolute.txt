@@ -122,3 +122,7 @@ D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\System.Drawing.Co
 D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
 D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\School\SSD Code\Blackjack\Blackjack\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Email Us.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Help Page.g.cs
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Email Us.baml
+D:\School\SSD Code\Blackjack\Blackjack\obj\Debug\netcoreapp3.1\Help Page.baml

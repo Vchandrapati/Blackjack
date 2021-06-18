@@ -90,5 +90,11 @@ namespace Blackjack
             else if (Guest)
                 MessageBox.Show("You must be signed in to have this functionality");
         }
+
+        private void BtnHelp_OnClick(object sender, RoutedEventArgs e)
+        {
+            HelpPage hp = new HelpPage();
+            hp.Show();
+        }
     }
 }
