@@ -181,6 +181,8 @@
             <Button x:Name="btnCreate" Style="{DynamicResource btnCreate}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="165,353,0,0" VerticalAlignment="Top" Width="103" Foreground="White" Click="BtnCreate_OnClick" TabIndex="4"/>
             <PasswordBox x:Name="txtPass" HorizontalAlignment="Center" Margin="0,296,0,0" VerticalAlignment="Top" Width="240" Background="{x:Null}" PasswordChar="•" Foreground="White" CaretBrush="White" FontSize="16" VerticalContentAlignment="Center" TabIndex="1"/>
             <Button x:Name="btnBrooker" Style="{DynamicResource btnBrooker}" Content="Button" HorizontalAlignment="Center" Height="36" Margin="0,394,0,0" VerticalAlignment="Top" Width="103" Foreground="White" TabIndex="4" Click="BtnBrooker_OnClick"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="222,15,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="255,4,5,453" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
         </Grid>
     </Border>
 </Window>

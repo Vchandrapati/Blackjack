@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
 using System.Printing;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using Blackjack.Classes;
 using static Blackjack.Classes.Variables;
@@ -59,6 +60,29 @@ namespace Blackjack
             {
                 MessageBox.Show($"There was an error when printing. Error:{ex}");
             }
+        }
+        private void BtnAction_OnClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Exit_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void BtnRefresh_OnClick(object sender, RoutedEventArgs e)
+        {
+            Losses = _sqlconnect.Info(User, "Losses");
+            Wins = _sqlconnect.Info(User, "Wins");
+            GamesPlayed = _sqlconnect.Info(User, "Games_Played");
+            MoneyWon = _sqlconnect.Info(User, "Money_Won");
+            MoneyLost = _sqlconnect.Info(User, "Money_Lost");
+            Pushes = _sqlconnect.Info(User, "Pushes");
+            CardsDrawn = _sqlconnect.Info(User, "Cards_Drawn");
+            Level = Math.Floor(_sqlconnect.Info(User, "Points") / 1000m) - 2m;
+            Money = _sqlconnect.Info(User, "Money");
+            Points = _sqlconnect.Info(User, "Points");
         }
     }
 }

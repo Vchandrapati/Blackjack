@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using static Blackjack.Classes.Variables;
@@ -124,6 +125,15 @@ namespace Blackjack
             Skins s = new Skins();
             s.Show();
             Close();
+        }
+        private void BtnAction_OnClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Exit_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

@@ -215,6 +215,8 @@
             <Button x:Name="btnEmail" Style="{DynamicResource btnEmail}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="374,448,0,0" VerticalAlignment="Top" Width="103" Foreground="White" TabIndex="4" Click="btnEmail_OnClick" RenderTransformOrigin="0.54,-1.011"/>
             <TextBlock HorizontalAlignment="Left" Height="36" Margin="23,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="84" Foreground="White" FontSize="24"><Run Language="en-au" Text="Subject"/></TextBlock>
             <TextBox x:Name="txtMessage" HorizontalAlignment="Center" Height="208" Margin="0,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="454"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="417,21,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="450,10,10,451" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
         </Grid>
     </Border>
 </Window>

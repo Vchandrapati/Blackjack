@@ -4,6 +4,7 @@ using System.Net;
 using System.Net.Mail;
 using static Blackjack.Classes.Variables;
 using System.Windows;
+using System.Windows.Input;
 
 namespace Blackjack
 {
@@ -66,6 +67,16 @@ namespace Blackjack
         private void BtnBack_OnClick(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void BtnAction_OnClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Exit_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

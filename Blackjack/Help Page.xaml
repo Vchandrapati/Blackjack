@@ -254,6 +254,8 @@
             <TextBlock HorizontalAlignment="Center" Height="110" Margin="0,402,0,0" Text="From here on the rest is straight forward with the objective being to get the most money and top the leader-board, rounds usually don't last more then 5 minutes as the game is 4 CARD DRAW ONLY if you reach maximum hand size your hands will immediately be evaluated and a winner will be chosen." TextWrapping="Wrap" VerticalAlignment="Top" Width="454" Foreground="White" FontSize="16"/>
             <Button x:Name="btnEmail" Style="{DynamicResource btnEmail}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="374,554,0,0" VerticalAlignment="Top" Width="103" Foreground="White" TabIndex="4" Click="BtnEmail_OnClick"/>
             <Button x:Name="btnWeb" Style="{DynamicResource btnWeb}" Content="Button" HorizontalAlignment="Center" Height="36" Margin="0,554,0,0" VerticalAlignment="Top" Width="103" Foreground="White" TabIndex="4" Click="BtnWeb_OnClick"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="417,21,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="450,10,10,550" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
         </Grid>
     </Border>
 </Window>

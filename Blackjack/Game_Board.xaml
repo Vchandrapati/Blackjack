@@ -199,6 +199,8 @@
             <Button x:Name="btnQuit" Content="Quit" HorizontalAlignment="Left" Height="60" Margin="10,460,0,0" VerticalAlignment="Top" Width="145" FontSize="36" Click="BtnQuit_OnClick"/>
             <TextBlock x:Name="txtPot" HorizontalAlignment="Left" Height="46" Margin="382,438,0,0" Text="Pot: $0" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" FontSize="40" FontFamily="Cambria Math" Foreground="Red" TextAlignment="Center"/>
             <TextBlock x:Name="txtMoney" HorizontalAlignment="Left" Height="41" Margin="10,555,0,0" Text="Money: $" TextWrapping="Wrap" VerticalAlignment="Top" Width="259" FontSize="30" FontFamily="Cambria Math"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="1117,24,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="1150,13,10,747" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
         </Grid>
     </Border>
 </Window>

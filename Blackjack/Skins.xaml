@@ -133,6 +133,47 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual3">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background3" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border3" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background2" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border2" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background2" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border2" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background2" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border2" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground2" Color="#FF838383"/>
+        <Style x:Key="btnExit" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background3}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border3}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Image Height="30" Width="30" Source="/Assets/Exit.png" Stretch="Fill"/>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Border Background="#232537" CornerRadius="25,25,25,25">
         <Grid>
@@ -144,6 +185,8 @@
             <Button x:Name="btn_1" Content="Equip" HorizontalAlignment="Left" Height="49" Margin="33,297,0,0" VerticalAlignment="Top" Width="116" FontSize="18" Click="Change_OnClick"/>
             <Button x:Name="btn_2" Content="Equip" HorizontalAlignment="Center" Height="49" Margin="0,297,0,0" VerticalAlignment="Top" Width="116" FontSize="18" Click="Change_OnClick"/>
             <Button x:Name="btn_3" Content="Equip" HorizontalAlignment="Left" Height="49" Margin="354,297,0,0" VerticalAlignment="Top" Width="116" FontSize="18" Click="Change_OnClick"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="417,21,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="450,10,10,402" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
         </Grid>
     </Border>
 </Window>

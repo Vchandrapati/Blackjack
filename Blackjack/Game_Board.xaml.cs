@@ -304,5 +304,14 @@ namespace Blackjack
             else if (PlayerCardCount == 4 && PlayerHandValue < 21)
                 DealerTurn();
         }
+        private void BtnAction_OnClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Exit_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

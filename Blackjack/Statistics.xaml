@@ -214,6 +214,43 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual5">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background5" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border5" Color="#FF707070"/>
+        <Style x:Key="btnRefresh" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual5}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background5}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border5}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Rectangle Height="41" Stroke="White" Width="100"/>
+                            <TextBlock Foreground="White" FontSize="20" Margin="22,6,-16,6" Text="Refresh" TextWrapping="Wrap"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true"/>
+                            <Trigger Property="IsMouseOver" Value="true"/>
+                            <Trigger Property="IsPressed" Value="true"/>
+                            <Trigger Property="IsEnabled" Value="false"/>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Border Background="#232537" CornerRadius="25,25,25,25">
         <Grid>
@@ -241,6 +278,9 @@
             <Image x:Name="pfp" Margin="253,39,267,359" Stretch="Fill" Source="/Assets/Circle pfp.png"/>
             <Button x:Name="btnBack" Style="{DynamicResource btnBack}" Content="Button" HorizontalAlignment="Left" Height="41" Margin="32,519,0,0" VerticalAlignment="Top" Width="108" Click="BtnBack_OnClick"/>
             <Button x:Name="btnPrint" Style="{DynamicResource btnPrint}" Content="Button" HorizontalAlignment="Left" Height="41" Margin="420,519,0,0" VerticalAlignment="Top" Width="108" Click="BtnPrint_OnClick"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="604,30,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="637,19,15,511" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
+            <Button x:Name="btnRefresh" Style="{DynamicResource btnRefresh}" Content="Button" HorizontalAlignment="Left" Height="41" Margin="231,519,0,0" VerticalAlignment="Top" Width="108" Click="BtnRefresh_OnClick"/>
         </Grid>
     </Border>
 </Window>

@@ -421,6 +421,8 @@
             <Button x:Name="btnHelp" Style="{DynamicResource btnSetting}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="40,174,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" Click="BtnHelp_OnClick"/>
             <Button x:Name="btnShop" Style="{DynamicResource btnShop}" Content="Button" HorizontalAlignment="Left" Height="160" Margin="219,174,0,0" VerticalAlignment="Top" Width="165" Grid.Row="1" Click="BtnShop_OnClick"/>
             <TextBlock x:Name="txtLevel" HorizontalAlignment="Left" Margin="4,47,0,0" Text="Level" TextWrapping="Wrap" VerticalAlignment="Top" Width="64" FontFamily="Bungee Inline" Panel.ZIndex="10" Foreground="Black" TextAlignment="Center" FontSize="16" Grid.RowSpan="2"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="519,17,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="552,6,8,39" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
         </Grid>
     </Border>
 </Window>

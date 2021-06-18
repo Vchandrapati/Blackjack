@@ -247,8 +247,10 @@
     </Window.Resources>
     <Border Background="#232537" CornerRadius="25,25,25,25">
         <Grid>
-            <DataGrid x:Name="dgLeaders" Margin="25,29,25,94" Loaded="dgLeaders_Loaded" FontSize="16" FontFamily="Bungee Inline" Height="280" IsReadOnly="True" Width="650"/>
-            <Button x:Name="btnBack" Style="{DynamicResource btnBack}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="25,337,0,0" VerticalAlignment="Top" Width="103" Foreground="White" Click="BtnBack_OnClick" TabIndex="4"/>
+            <DataGrid x:Name="dgLeaders" Margin="25,52,25,71" Loaded="dgLeaders_Loaded" FontSize="16" FontFamily="Bungee Inline" Height="280" IsReadOnly="True" Width="650"/>
+            <Button x:Name="btnBack" Style="{DynamicResource btnBack}" Content="Button" HorizontalAlignment="Left" Height="36" Margin="32,348,0,0" VerticalAlignment="Top" Width="103" Foreground="White" Click="BtnBack_OnClick" TabIndex="4"/>
+            <Button x:Name="Minimize" Content="" HorizontalAlignment="Left" Height="8" Margin="615,20,0,0" VerticalAlignment="Top" Width="28" Click="BtnAction_OnClick"/>
+            <Image x:Name="Exit" Margin="648,9,12,354" Stretch="Fill" Source="/Assets/Exit.png" Width="40" Height="40" MouseDown="Exit_OnMouseDown"/>
         </Grid>
     </Border>
 </Window>

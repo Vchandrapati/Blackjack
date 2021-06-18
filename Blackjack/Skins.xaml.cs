@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using static Blackjack.Classes.Variables;
 
 namespace Blackjack
@@ -40,6 +41,16 @@ namespace Blackjack
             Home_Page hp = new Home_Page();
             hp.Show();
             Close();
+        }
+
+        private void BtnAction_OnClick(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Exit_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }
