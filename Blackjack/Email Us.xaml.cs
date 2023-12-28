@@ -39,7 +39,7 @@ namespace Blackjack
                     smtp.Host = "smtp.gmail.com";
                     smtp.EnableSsl = true;
                     smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential("vikil.chandrapati1@gmail.com", "Iloveracing1");
+                    smtp.Credentials = new NetworkCredential("vikil.chandrapati1@gmail.com", "******");
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     //Sending message
                     smtp.Send(message);
