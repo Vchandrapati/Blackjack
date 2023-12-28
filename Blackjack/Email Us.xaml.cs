@@ -30,8 +30,8 @@ namespace Blackjack
                     MailMessage message = new MailMessage();
                     SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                     //Setting message
-                    message.From = new MailAddress("vikil.chandrapati1@gmail.com");
-                    message.To.Add(new MailAddress("vikil.chandrapati1@gmail.com"));
+                    message.From = new MailAddress("hi.hi@gmail.com");
+                    message.To.Add(new MailAddress("hi.hi@gmail.com"));
                     message.Subject = "Blackjack Help";
                     message.Body = txtMessage.Text;
                     //SMTP config settings
@@ -39,7 +39,7 @@ namespace Blackjack
                     smtp.Host = "smtp.gmail.com";
                     smtp.EnableSsl = true;
                     smtp.UseDefaultCredentials = false;
-                    smtp.Credentials = new NetworkCredential("vikil.chandrapati1@gmail.com", "******");
+                    smtp.Credentials = new NetworkCredential("hi.hi@gmail.com", "******");
                     smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                     //Sending message
                     smtp.Send(message);
